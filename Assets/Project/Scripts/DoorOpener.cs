@@ -5,22 +5,20 @@ using UnityEngine;
 public class DoorOpener : MonoBehaviour
 {
     public Vector3 pivot;
-    public float doorOpenAngle = 90.0f;
+    public float doorOpenAngle = -90.0f;
     public float doorCloseAngle = 0.0f;
     public float smooth = 2.0f;
     public bool open = false;
 
     private void Start()
     {
-        //pivot 좌표는 만들었는데 이거 중심으로 회전시키는 것을 모르겠다.
-        pivot = new Vector3(transform.position.x - 1f, transform.position.y, transform.position.z);
         StartCoroutine(Open());
     }
 
     IEnumerator Open()
     {
         open = true;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         open = false;
     }
 
