@@ -1,68 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
-public class Object_Hierarchy : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+public class Object_Hierarchy : MonoBehaviour {
+
+    private void OnCollisionEnter(Collision collision) {
+        if(collision.gameObject.tag != "Ingredient") return; // 재료 오브젝트가 아니면 무시한다.
+
+        if(transform.position.y < collision.transform.position.y) {
+            // 둘 중 y좌표가 더 낮은 오브젝트를 기준으로 x좌표와 z좌표를 동기화
+            collision.rigidbody.velocity = Vector3.zero;
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            //물체의 collider의 y좌표만큼 띄우기
+            Vector3 p_position = transform.position;
+            collision.transform.position = new Vector3(p_position.x, p_position.y + GetComponent<Renderer>().bounds.size.y, p_position.z);
+            //두 물체의 회전 초기화
+        collision.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+
+        // 두 오브젝트는 isKinematic이 되며, 특정 오브젝트에 종속된다.
+        Rigidbody rb = GetComponent<Rigidbody>();
+        Rigidbody otherRb = collision.gameObject.GetComponent<Rigidbody>();
+
+        //if (rb != null) rb.isKinematic = true;
+        if (otherRb != null) otherRb.isKinematic = true;
+        //GetComponent<XRGrabInteractable>().throwOnDetach = false;
+        collision.gameObject.GetComponent<XRGrabInteractable>().throwOnDetach = false;
+
+        collision.gameObject.transform.parent = transform;
+        }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-private bool isProcessingCollision = false;
-
-void OnCollisionEnter(Collision collision)
-{
-    if (!isProcessingCollision && collision.gameObject.tag == "Ingredient")
-    {
-        StartCoroutine(ProcessCollision(collision));
-    }
-}
-
-IEnumerator ProcessCollision(Collision collision)
-{
-    isProcessingCollision = true;
-        this.GetComponent<Rigidbody>().isKinematic = true;
-    collision.rigidbody.isKinematic = true;
-
-    // 두 오브젝트의 y좌표를 비교
-    if (this.transform.position.y < collision.transform.position.y)
-    {
-        // 이 오브젝트의 y좌표가 더 낮으면, 충돌한 오브젝트의 부모를 이 오브젝트로 설정
-        collision.rigidbody.velocity = Vector3.zero;
-        this.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        collision.transform.parent = this.transform;
-        Vector3 p_position = this.transform.position;
-        Vector3 c_position = collision.transform.position;
-        collision.transform.position = new Vector3(p_position.x, p_position.y + collision.collider.bounds.extents.y, p_position.z);
-    }
-    else
-    {
-        // 충돌한 오브젝트의 y좌표가 더 낮으면, 이 오브젝트의 부모를 충돌한 오브젝트로 설정
-        this.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        collision.rigidbody.velocity = Vector3.zero;
-        this.transform.parent = collision.transform;
-        Vector3 p_position = collision.transform.position;
-        Vector3 c_position = this.transform.position;
-        this.transform.position = new Vector3(p_position.x, p_position.y + this.GetComponent<Collider>().bounds.extents.y, p_position.z);
-    }
-
-    // 부착된 두 오브젝트는 하나의 오브젝트인 것 처럼 행동하게 된다.
-    // 부착된 두 오브젝트는 하나의 오브젝트인 것 처럼 행동하게 된다.
-    FixedJoint fj = this.gameObject.AddComponent<FixedJoint>();
-    fj.connectedBody = collision.rigidbody;
-
-        this.GetComponent<Rigidbody>().isKinematic = false;
-    collision.rigidbody.isKinematic = false;
-    
-
-    yield return new WaitForSeconds(0.5f); // 0.5초 동안 대기
-
-    isProcessingCollision = false;
-}
 }
