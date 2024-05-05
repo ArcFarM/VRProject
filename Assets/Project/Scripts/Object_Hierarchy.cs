@@ -23,10 +23,11 @@ public class Object_Hierarchy : MonoBehaviour {
         Rigidbody rb = GetComponent<Rigidbody>();
         Rigidbody otherRb = collision.gameObject.GetComponent<Rigidbody>();
 
-        //if (rb != null) rb.isKinematic = true;
         if (otherRb != null) otherRb.isKinematic = true;
-        //GetComponent<XRGrabInteractable>().throwOnDetach = false;
+        //경고창 삭제용
         collision.gameObject.GetComponent<XRGrabInteractable>().throwOnDetach = false;
+        //위에 물건 잡히는거 방지하기
+        collision.gameObject.GetComponent<XRGrabInteractable>().enabled = false;
 
         collision.gameObject.transform.parent = transform;
         }
