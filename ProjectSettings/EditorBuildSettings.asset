@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Diner (Low Poly)/Diner.unity
+    guid: 71790b348ad18e14fa6bd36856ddb422
   m_configObjects:
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 3a790bf4753c67243864322996abd65d, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 54e2f33e1fc6c10488cc4bc74f313ef0, type: 2}
