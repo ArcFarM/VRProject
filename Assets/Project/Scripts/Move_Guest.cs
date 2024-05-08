@@ -5,32 +5,32 @@ using UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Theme.Primitives;
 
 public class Move_Guest : MonoBehaviour
 {
-    public Transform StartingPos;       //¼Õ´ÔÀÇ Ãâ¹ß ÁöÁ¡
-    public Vector3 DoorstepPos;          //¹® ¾ÕÀÇ µµÂø ÁöÁ¡
-    public float MoveSpeed = 3.0f;      //ÀÌµ¿ ¼Óµµ
-    public float RotationSpeed = 45.0f;  //¹® ¾Õ µµÂø ÈÄ È¸Àü ¼Óµµ
-    public float RotationAngle = -90.0f;  //¹® ¾Õ µµÂø ÈÄ È¸Àü °¢µµ
-    private Vector3 CounterPos = new Vector3(4.25f, 1.9f, 32.274f);       //Ä«¿îÅÍ À§Ä¡
+    public Transform StartingPos;       //ï¿½Õ´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public Vector3 DoorstepPos;          //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public float MoveSpeed = 3.0f;      //ï¿½Ìµï¿½ ï¿½Óµï¿½
+    public float RotationSpeed = 45.0f;  //ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½Óµï¿½
+    public float RotationAngle = -90.0f;  //ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    private Vector3 CounterPos = new Vector3(4.25f, 1.9f, 32.274f);       //Ä«ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡
 
-    public bool isMoving = true;       //¼Õ´ÔÀÌ ÀÌµ¿ ÁßÀÎÁö È®ÀÎÇÏ´Â flag º¯¼ö
+    public bool isMoving = true;       //ï¿½Õ´ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï´ï¿½ flag ï¿½ï¿½ï¿½ï¿½
     void Start()
     {
         StartingPos = transform;
         DoorstepPos = transform.position;
-        DoorstepPos.x = 5.6f;           //µµÂø ÁöÁ¡ ÁÂÇ¥ ¼³Á¤
+        DoorstepPos.x = 5.6f;           //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ ï¿½ï¿½ï¿½ï¿½
     }
 
     void Update()
     {
         if (isMoving)
         {
-            transform.position = Vector3.MoveTowards(transform.position, DoorstepPos, MoveSpeed * Time.deltaTime);       //¹®¾Õ±îÁö ¼Õ´Ô ÀÌµ¿
-            if (transform.position == DoorstepPos)       // ¹® ¾Õ µµÂø ½Ã µ¹°í Ä«¿îÅÍ·Î °¡´Â ÄÚ·çÆ¾ ½ÃÀÛ
+            transform.position = Vector3.MoveTowards(transform.position, DoorstepPos, MoveSpeed * Time.deltaTime);       //ï¿½ï¿½ï¿½Õ±ï¿½ï¿½ï¿½ ï¿½Õ´ï¿½ ï¿½Ìµï¿½
+            if (transform.position == DoorstepPos)       // ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½ï¿½Í·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ú·ï¿½Æ¾ ï¿½ï¿½ï¿½ï¿½
             {
                 isMoving = false;
                 StartCoroutine(Rotate());
             }
-            if(transform.position == CounterPos)        // Ä«¿îÅÍ ¾Õ¿¡ µµÂø ½Ã ÄÚ·çÆ¾ ÁßÁö
+            if(transform.position.x == CounterPos.x)        // Ä«ï¿½ï¿½ï¿½ï¿½ ï¿½Õ¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ú·ï¿½Æ¾ ï¿½ï¿½ï¿½ï¿½
             {
                 isMoving = false;
                 StopCoroutine(Rotate());
@@ -40,15 +40,15 @@ public class Move_Guest : MonoBehaviour
 
     IEnumerator Rotate()
     {
-        Quaternion targetRotation = Quaternion.Euler(0, RotationAngle, 0);      //µµÂø ÈÄ È¸Àü °¢µµ ¼³Á¤ 
+        Quaternion targetRotation = Quaternion.Euler(0, RotationAngle, 0);      //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
         while (transform.rotation != targetRotation)
         {
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, RotationSpeed * Time.deltaTime);       //È¸Àü
-            yield return null;      // ´Ù µ¹ ¶§±îÁö ´ë±â
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, RotationSpeed * Time.deltaTime);       //È¸ï¿½ï¿½
+            yield return null;      // ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         }
 
-        yield return new WaitForSeconds(0.25f);     //0.25ÃÊ ÈÄ ¼Õ´Ô ÀÌµ¿
-        DoorstepPos = CounterPos;        //Ä«¿îÅÍ·Î ÀÌµ¿
+        yield return new WaitForSeconds(0.25f);     //0.25ï¿½ï¿½ ï¿½ï¿½ ï¿½Õ´ï¿½ ï¿½Ìµï¿½
+        DoorstepPos = CounterPos;        //Ä«ï¿½ï¿½ï¿½Í·ï¿½ ï¿½Ìµï¿½
         isMoving = true;
         Debug.Log(DoorstepPos);
         Debug.Log(isMoving);
