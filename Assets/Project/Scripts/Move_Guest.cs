@@ -52,5 +52,6 @@ public class Move_Guest : MonoBehaviour
         isMoving = true;
         Debug.Log(DoorstepPos);
         Debug.Log(isMoving);
+        yield break;
     }
 }

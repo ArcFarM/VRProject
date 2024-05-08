@@ -224,15 +224,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4044501913160422114, guid: d36db097c507d654a873812daf35945d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.823
+      value: 0.74
       objectReference: {fileID: 0}
     - target: {fileID: 4044501913160422114, guid: d36db097c507d654a873812daf35945d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 43.949997
+      value: 43.81
       objectReference: {fileID: 0}
     - target: {fileID: 4044501913160422114, guid: d36db097c507d654a873812daf35945d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 140.42
+      value: 140.39
       objectReference: {fileID: 0}
     - target: {fileID: 4044501913160422114, guid: d36db097c507d654a873812daf35945d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6785,6 +6785,73 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8b5191c54cb983429ffed02e9bbaa43, type: 3}
+--- !u!1 &502490816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 502490817}
+  - component: {fileID: 502490819}
+  - component: {fileID: 502490818}
+  m_Layer: 0
+  m_Name: DoorSensor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &502490817
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502490816}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.511, y: 45.01297, z: 140.28351}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1391953505}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &502490818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502490816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64605c9d01ef28f4fa5d6be4cc1b4799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Door: {fileID: 915072470}
+--- !u!65 &502490819
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502490816}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 2.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &506872032 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 356cd2f9beaefcc478e9afe3ce88abe5, type: 3}
@@ -12450,7 +12517,7 @@ MonoBehaviour:
   pivot: {x: 0, y: 0, z: 0}
   doorOpenAngle: -90
   doorCloseAngle: 0
-  smooth: 2
+  smooth: 4
   open: 0
 --- !u!1001 &915528895
 PrefabInstance:
@@ -18858,6 +18925,7 @@ Transform:
   - {fileID: 600640366}
   - {fileID: 9271489}
   - {fileID: 844103764}
+  - {fileID: 502490817}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1410508736 stripped
@@ -21041,9 +21109,10 @@ GameObject:
   - component: {fileID: 1554066359}
   - component: {fileID: 1554066358}
   - component: {fileID: 1554066362}
+  - component: {fileID: 1554066363}
   m_Layer: 0
   m_Name: TempGuest
-  m_TagString: Untagged
+  m_TagString: Guest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21154,6 +21223,33 @@ MonoBehaviour:
   RotationSpeed: 45
   RotationAngle: -90
   isMoving: 1
+--- !u!54 &1554066363
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554066357}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!4 &1554858788 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0cbce2fca8c0b6c44b87015f4fdfc20e, type: 3}

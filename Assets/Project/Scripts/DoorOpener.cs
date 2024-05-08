@@ -7,20 +7,8 @@ public class DoorOpener : MonoBehaviour
     public Vector3 pivot;
     public float doorOpenAngle = -90.0f;            //문 열릴 각도
     public float doorCloseAngle = 0.0f;             //문 닫힐 각도
-    public float smooth = 2.0f;                     //열리는 속도
+    public float smooth = 4.0f;                     //열리는 속도
     public bool open = false;                       //열릴지 말지 결정하는 flag변수
-
-    private void Start()
-    {
-        StartCoroutine(Open());
-    }
-
-    IEnumerator Open()
-    {
-        open = true;
-        yield return new WaitForSeconds(3);     //열린 후 3초 뒤에 닫히게 함
-        open = false;
-    }
 
     void Update()
     {
