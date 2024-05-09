@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ingredient
   - Guest
+  - Waypoint
+  - Waypoint_Door
+  - Waypoint_Counter
   layers:
   - Default
   - TransparentFX

@@ -1,57 +1,105 @@
-/*using System.Collections;
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit.AffordanceSystem.Theme.Primitives;
+
 
 public class Move_Guest_Renewal : MonoBehaviour
 {
-    public GameObject startPos;       //손님 시작 위치
-    private List<GameObject> waypoints;
-    
-    public float MoveSpeed = 3.0f;      //움직이는 속도
-    public float RotationSpeed = 45.0f;  //도는 속도
-    public float RotationAngle = -90.0f;  //도는 각도
+    public List<GameObject> waypoints;
+    public float MoveSpeed = 3.0f;
+    public float RotationSpeed = 45.0f;
+    public float RotationAngle = -90.0f;
+    //최종 목적지지
+    private GameObject last_target = null;
+    //index
+    private int index = 0;
 
-    public bool isMoving = true;       //움직이는 지 확인하기 위한 flag
+    //회전을 위한 코루틴
+    private IEnumerator Do_Rotate;
+
     void Start()
     {
-        StartingPos = transform;
-        TargetPos = transform.position;
-        TargetPos.x = 5.6f;           //좌표를 문 앞 위치로 변경
+        //카운터 자리 중 빈 자리를 1 > 2 > 3 우선순위로 탐색하여 목적지 탐색
+        Find_Empty_Counter();
+        if(last_target == null){
+            //모든 카운터 자리가 차있는 경우 대기 공간으로 이동
+            Find_Empty_Waiting();
+        }
+        Do_Rotate = Rotation_Coroutine();
+        StartCoroutine(Move_Customer(waypoints[index]));
+
     }
 
-    void Update()
+    IEnumerator Move_Customer(GameObject waypoint)
     {
-        if (isMoving)
+        if(index < waypoints.Count) index++;
+        Vector3 wp_position = waypoint.transform.position;
+        Vector3 next_waypoint = new Vector3(wp_position.x, transform.position.y, wp_position.z);
+
+        while (Vector3.Distance(transform.position, next_waypoint) > 0.01f)
         {
-            transform.position = Vector3.MoveTowards(transform.position, TargetPos, MoveSpeed * Time.deltaTime);       //���ձ��� �մ� �̵�
-            if (transform.position == TargetPos)       // �� �� ���� �� ���� ī���ͷ� ���� �ڷ�ƾ ����
-            {
-                isMoving = false;
-                StartCoroutine(RotateAndMove());
+            if(waypoint.tag == "Waypoint_Door" && Check_Distance(waypoint.transform)){
+                //문 앞에 도착한 경우 회전
+                StartCoroutine(Do_Rotate);
             }
-            if(transform.position.x == CounterPos.position.x)        // ī���� �տ� ���� �� �ڷ�ƾ ����
-            {
-                isMoving = false;
-                StopCoroutine(RotateAndMove());
+
+            //다음 이동 지점으로 이동
+            transform.position = Vector3.MoveTowards(transform.position, next_waypoint, MoveSpeed * Time.deltaTime);
+            yield return null;
+        }
+        //도착을 했다면 재귀적 호출
+        if(Check_Distance(waypoint.transform)){
+            //여기서 원하는 빈자리에 도착하도록 유도
+            if(waypoint.tag == "Waypoint_Counter"){
+                while(waypoints[index].transform != last_target.transform){
+                    index++;
+                }
+            }
+            StartCoroutine(Move_Customer(waypoints[index]));
+        }
+    }
+
+    //회전 코루틴
+    IEnumerator Rotation_Coroutine() {
+        Quaternion target = Quaternion.Euler(0, 0, 0);
+        while(transform.rotation != target){
+            //각도가 같아질 때까지 회전
+            transform.rotation = Quaternion.RotateTowards(
+                    transform.rotation, target, RotationSpeed * Time.deltaTime);
+            yield return null;
+        }
+    }
+
+    //빈 자리 찾기
+    void Find_Empty_Counter(){
+        for(int i = 0; i < waypoints.Count; i++){
+        //카운터가 아닌 경유지는 무시하고, 빈 카운터 자리를 찾기
+            if(waypoints[i].tag != "Waypoint_Counter") continue;
+            if(waypoints[i].GetComponent<OrderWP_Flag>().flag == false){
+                last_target = waypoints[i];
+                waypoints[i].GetComponent<OrderWP_Flag>().flag = true;
+                return;
             }
         }
     }
 
-    IEnumerator RotateAndMove()
-    {
-        Quaternion targetRotation = Quaternion.Euler(0, RotationAngle, 0);      //���� �� ȸ�� ���� ���� 
-        while (transform.rotation != targetRotation)
-        {
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, RotationSpeed * Time.deltaTime);       //ȸ��
-            yield return null;      // 다 돌 때까지 대기
+    void Find_Empty_Waiting(){
+        for(int i = 0; i < waypoints.Count; i++){
+            //자리가 없는 대기실 공간으로 최종 목적지를 설정
+            if(waypoints[i].tag == "Waypoint_Waiting" 
+                && waypoints[i].GetComponent<OrderWP_Flag>().flag == false){
+                last_target = waypoints[i];
+                return;
+            }
         }
-
-        yield return new WaitForSeconds(0.25f);     //0.25 뒤에 다시 출발
-        TargetPos = CounterPos.position;        //ī���ͷ� �̵�
-        isMoving = true;
-        Debug.Log(TargetPos);
-        Debug.Log(isMoving);
+    }
+    //거리 측정용
+    bool Check_Distance(Transform waypoint){
+        if(Mathf.Abs(waypoint.position.x - transform.position.x) <= 0.01f 
+            && Mathf.Abs(waypoint.position.z - transform.position.z) <= 0.01f)
+        return true;
+        else return false;
     }
 }
-*/
