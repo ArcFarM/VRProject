@@ -8,7 +8,6 @@ public class DoorSensor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name + "Enter");
         if (other.tag == "Guest")
         {
             Door.GetComponent<DoorOpener>().open = true;
@@ -17,7 +16,6 @@ public class DoorSensor : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log(other.name + "Exit");
         if(other.tag == "Guest")
         {
             Door.GetComponent<DoorOpener>().open = false;
