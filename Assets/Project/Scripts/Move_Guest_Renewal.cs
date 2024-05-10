@@ -53,7 +53,7 @@ public class Move_Guest_Renewal : MonoBehaviour
         if(Check_Distance(waypoint.transform)){
             //여기서 원하는 빈자리에 도착하도록 유도
             if(waypoint.tag == "Waypoint_Counter"){
-                while(waypoints[index].transform != last_target.transform){
+                while(waypoints[index].transform != last_target.transform && index < waypoints.Count){
                     index++;
                 }
             }

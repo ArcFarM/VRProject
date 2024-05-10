@@ -9866,7 +9866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4b377bfd115e64abe26759b5b6822a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flag: 0
+  flag: 1
 --- !u!1 &788111584
 GameObject:
   m_ObjectHideFlags: 0
@@ -14299,7 +14299,7 @@ MonoBehaviour:
   - {fileID: 2106399293}
   - {fileID: 786462871}
   - {fileID: 1337788673}
-  MoveSpeed: 3
+  MoveSpeed: 5
   RotationSpeed: 45
   RotationAngle: -90
 --- !u!1001 &1008430938
@@ -34242,6 +34242,10 @@ PrefabInstance:
     - target: {fileID: 4740518585487270178, guid: 5caae8d373957fd45bf073e24a292153, type: 3}
       propertyPath: m_Name
       value: TempGuest
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740518585487270178, guid: 5caae8d373957fd45bf073e24a292153, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4813341151559853861, guid: 5caae8d373957fd45bf073e24a292153, type: 3}
       propertyPath: m_LocalPosition.x
