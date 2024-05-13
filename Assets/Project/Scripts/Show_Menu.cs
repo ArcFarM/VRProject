@@ -1,7 +1,7 @@
-/*using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
-public class GameLogic : MonoBehaviour
+public class Show_Menu : MonoBehaviour
 {
     public GameObject board;
     public GameObject life;
@@ -55,4 +55,4 @@ public class GameLogic : MonoBehaviour
             collision.gameObject.GetComponent<Guest>().Go_Outside();
         }
     }
-}*/
+}
