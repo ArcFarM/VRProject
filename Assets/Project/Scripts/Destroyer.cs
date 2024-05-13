@@ -11,7 +11,16 @@ public class Destroyer : MonoBehaviour
         if (other.gameObject.tag.Contains("Ingredient"))
         {
             //오브젝트를 파괴
-            Destroy(other.gameObject);
+            Delete_Object(other.gameObject);
+        }
+    }
+
+    private void Delete_Object(GameObject g_obj){
+        //null이 아니고 자식 오브젝트가 있으면
+        if(g_obj != null && g_obj.transform.GetChild(0) != null){
+            //자식부터 순차적으로 파괴
+            Delete_Object(g_obj.transform.GetChild(0).gameObject);
+            GameObject.Destroy(g_obj);
         }
     }
 }
