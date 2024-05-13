@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 using System.Collections.Generic;
 
 public class Show_Menu : MonoBehaviour
@@ -55,4 +55,4 @@ public class Show_Menu : MonoBehaviour
             collision.gameObject.GetComponent<Guest>().Go_Outside();
         }
     }
-}
+}*/
