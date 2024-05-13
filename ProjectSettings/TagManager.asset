@@ -9,6 +9,7 @@ TagManager:
   - Waypoint
   - Waypoint_Door
   - Waypoint_Counter
+  - Waypoint_Out
   layers:
   - Default
   - TransparentFX

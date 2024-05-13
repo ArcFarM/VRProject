@@ -86,5 +86,10 @@ public class Move_Guest_Renewal : MonoBehaviour
         if(other.CompareTag("Waypoint_Door")){
             StartCoroutine(Rotation_Coroutine());
         }
+        //손님의 퇴장 구현
+        if(other.CompareTag("Waypoint_Out")){
+            gameObject.SetActive(false);
+            UnityEngine.Object.Destroy(gameObject);
+        }
     }
 }
