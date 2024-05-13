@@ -17,9 +17,10 @@ public class Destroyer : MonoBehaviour
 
     private void Delete_Object(GameObject g_obj){
         //null이 아니고 자식 오브젝트가 있으면
-        if(g_obj != null && g_obj.transform.GetChild(0) != null){
-            //자식부터 순차적으로 파괴
-            Delete_Object(g_obj.transform.GetChild(0).gameObject);
+        if(g_obj != null) {
+            if(g_obj.transform.childCount > 0){
+                Delete_Object(g_obj.transform.GetChild(0).gameObject);
+            }
             GameObject.Destroy(g_obj);
         }
     }
