@@ -11,4 +11,14 @@
 7. 조리 공간에서 햄버거 조립하고 이걸 집어서 Guest_Stop 공간 앞에 잇는 접시에 충돌하면 이를 비교하여 주문 완성 여부를 결정하기
 8. 스크립트 설정 3 : 라이프 표시하는 화면 구현하기
 9. 또 추가할 만한 거 있나?
+
+0513 TODO
+
+1. 뭉쳐진 재료 구현하기
+-Bacon, Ham, Mushroom, Onion, Salad, Shrimp, Cucumber
+(동일한 이름으로 Diner 폴더의 Prefab에 있으므로, Prefab을 복붙해서 새 프리팹으로 만든 후 작업)
+
+2. 칼질하면 치즈, 생선이 토막나는 스크립트 생성하기
+   https://assetstore.unity.com/packages/3d/props/weapons/free-modern-combat-knife-178655
+   칼 에셋은 이걸 이용
  
