@@ -36894,12 +36894,20 @@ PrefabInstance:
       value: Life_Indicator
       objectReference: {fileID: 0}
     - target: {fileID: 5686526932437921185, guid: bb244438b8a9fb6439eea03595acbf75, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.17876
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686526932437921185, guid: bb244438b8a9fb6439eea03595acbf75, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.14986001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686526932437921185, guid: bb244438b8a9fb6439eea03595acbf75, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.453492
+      value: 3.254
       objectReference: {fileID: 0}
     - target: {fileID: 5686526932437921185, guid: bb244438b8a9fb6439eea03595acbf75, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9544891
+      value: 1.9801
       objectReference: {fileID: 0}
     - target: {fileID: 5686526932437921185, guid: bb244438b8a9fb6439eea03595acbf75, type: 3}
       propertyPath: m_LocalPosition.z
@@ -36936,7 +36944,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 771334443147024144, guid: bb244438b8a9fb6439eea03595acbf75, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: bb244438b8a9fb6439eea03595acbf75, type: 3}
 --- !u!54 &5477996339559181975 stripped
 Rigidbody:
