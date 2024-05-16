@@ -78,9 +78,9 @@ public class Move_Guest : MonoBehaviour
 
         //카운터 자리 중 빈 자리를 1 > 2 > 3 우선순위로 탐색하여 TargetPos를 선정
         for(int i = 0; i < CounterList.Count; i++){
-            if(CounterList[i].GetComponent<OrderWP_Flag>().flag == false){
+            if(CounterList[i].GetComponent<OrderWP_flag>().flag == false){
                 TargetPos = CounterList[i].transform.position;
-                CounterList[i].GetComponent<OrderWP_Flag>().flag = true;
+                CounterList[i].GetComponent<OrderWP_flag>().flag = true;
                 break;
             }
         }

@@ -64,9 +64,9 @@ public class Move_Guest_Renewal : MonoBehaviour
         for(int i = 0; i < counters.Count; i++){
                     Debug.Log("Finging Empty Space... " + i);
             //빈 카운터 자리 찾기
-            if(counters[i].GetComponent<OrderWP_Flag>().flag == false){
+            if(counters[i].GetComponent<OrderWP_flag>().flag == false){
                 last_target = counters[i];
-                counters[i].GetComponent<OrderWP_Flag>().flag = true;
+                counters[i].GetComponent<OrderWP_flag>().flag = true;
                 return;
             }
         }

@@ -1,7 +1,7 @@
 /*using UnityEngine;
 using System.Collections.Generic;
 
-public class Show_Menu : MonoBehaviour
+public class asdfasdf : MonoBehaviour
 {
     public GameObject board;
     public GameObject life;
