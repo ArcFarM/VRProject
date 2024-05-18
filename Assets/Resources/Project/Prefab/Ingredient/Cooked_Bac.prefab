@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5469413441259008210}
   - component: {fileID: -4117255164196006254}
   m_Layer: 0
-  m_Name: Bacon_Cooked
+  m_Name: Cooked_Bac
   m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

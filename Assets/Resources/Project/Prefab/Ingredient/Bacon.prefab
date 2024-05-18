@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 107486293112271960}
   - component: {fileID: 9131370031623727286}
   - component: {fileID: -5645520831547526917}
+  - component: {fileID: -3756165458189286494}
   m_Layer: 0
   m_Name: Bacon
   m_TagString: Ingredient
@@ -294,6 +295,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-3756165458189286494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155186391508382041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24962c468fbf3f34580db5af11101c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cookedObject: {fileID: 155186391508382041, guid: 6f64c5288fd85024bb78bb75102abaa9, type: 3}
+  collisionTime: 0
 --- !u!1001 &1594666310733923981
 PrefabInstance:
   m_ObjectHideFlags: 0

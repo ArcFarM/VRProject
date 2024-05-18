@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -8747134801563638600}
   - component: {fileID: -4717263211860223624}
   - component: {fileID: -6266410988236425978}
+  - component: {fileID: -4734173793102728506}
   m_Layer: 0
   m_Name: Steak
   m_TagString: Ingredient
@@ -32,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -300,3 +301,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85eb2b5cd5fd8eb4db5b305cf3a1ef6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-4734173793102728506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8281452256979724152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24962c468fbf3f34580db5af11101c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cookedObject: {fileID: 5657329893338904949, guid: 69e8aebba8885b74e8ea9677dd9ad931, type: 3}
+  collisionTime: 0

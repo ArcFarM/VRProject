@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 1251997250483163463}
   - component: {fileID: 779722366510310963}
   - component: {fileID: 1842400035797562830}
+  - component: {fileID: 8455410163617017416}
   m_Layer: 0
-  m_Name: Grill_
+  m_Name: Grill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,5 +132,18 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.8855604, y: 0.44207478, z: 0.4408122}
-  m_Center: {x: -0.07040538, y: 0.22920808, z: 0.012267235}
+  m_Size: {x: 0.8855604, y: 0.064368725, z: 0.4408122}
+  m_Center: {x: -0.070405364, y: 0.44739008, z: 0.012267232}
+--- !u!114 &8455410163617017416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7555299665360859056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51a2d742fc3d2e4b81d8211a63d6695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cooked_Steak: {fileID: 5657329893338904949, guid: 69e8aebba8885b74e8ea9677dd9ad931, type: 3}
