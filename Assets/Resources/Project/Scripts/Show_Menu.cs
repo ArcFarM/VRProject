@@ -22,9 +22,9 @@ public class Show_Menu : MonoBehaviour {
     public List<GameObject> ing_list = new List<GameObject>();
 
     //현재 메뉴를 표시해야 하는 지를 결정하는 플래그
-    bool flag = false;
+    public bool flag = true;
 
-    void Start() {
+    void Awake() {
         // Ing_List 열거형의 각 값에 대해
         foreach (Ing_List ing in Enum.GetValues(typeof(Ing_List)))
         {
@@ -57,7 +57,6 @@ public class Show_Menu : MonoBehaviour {
             //열거형에 저장된 재료를 가져오기
             Ing_List ing = (Ing_List)Enum.Parse(typeof(Ing_List), menu_list[i].ToString());
             GameObject ingredient = ing_list[(int)ing];
-            Debug.Log(ingredient);
             //메뉴를 화면에 표시
             GameObject newIngredient = Instantiate(ingredient, menu_arr[i].transform.position, Quaternion.identity);
             //메뉴가 움직이지 않도록 설정

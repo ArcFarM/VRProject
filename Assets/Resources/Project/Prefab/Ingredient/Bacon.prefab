@@ -308,6 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cookedObject: {fileID: 155186391508382041, guid: 6f64c5288fd85024bb78bb75102abaa9, type: 3}
+  refer: 10
   collisionTime: 0
 --- !u!1001 &1594666310733923981
 PrefabInstance:
