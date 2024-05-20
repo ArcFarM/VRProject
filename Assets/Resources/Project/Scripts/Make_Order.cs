@@ -8,7 +8,7 @@ public class Make_Order : MonoBehaviour
     //난이도 조절을 위한 스테이지 카운터
     //public GameObject stageCounter;
     private int level;
-    private List<Ing_List> order = new List<Ing_List>();
+    public List<Ing_List> order = new List<Ing_List>();
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +17,6 @@ public class Make_Order : MonoBehaviour
         //임시용
         level = 1;
         Add_Ing();
-        for(int i = 0; i < order.Count; i++)
-        {
-            Debug.Log(order[i]);
-        }
     }
 
     void Add_Ing()
@@ -48,4 +44,5 @@ public class Make_Order : MonoBehaviour
     public List<Ing_List> getList(){
         return order;
     }
+
 }

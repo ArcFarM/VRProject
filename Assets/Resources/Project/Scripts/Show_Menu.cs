@@ -36,21 +36,11 @@ public class Show_Menu : MonoBehaviour {
         }
     }
 
-    void Update(){
-        //손님이 자리에 들어오면 메뉴 표시
-        if(waypoint.GetComponent<OrderWP_flag>().flag && flag == true) {
-            Display_Menu();
-            flag = false;
-        }
-        if(!waypoint.GetComponent<OrderWP_flag>().flag && flag == false) {
-            flag = true;
-        }
-    }
-
     //메뉴를 화면에 표시하는 메서드
-    void Display_Menu(){
+    public void Display_Menu(){
+        Debug.Log("Menu Display On");
         //손님의 메뉴 리스트를 가져옴
-        menu_list = guest.GetComponent<Make_Order>().getList();
+        menu_list = guest.GetComponent<Make_Order>().order;
 
         //메뉴 리스트를 순회하며 메뉴를 화면에 표시
         for(int i = 0; i < menu_list.Count; i++){
