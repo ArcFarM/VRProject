@@ -9,14 +9,15 @@ public class OrderWP_flag : MonoBehaviour
     //손님이 온다면 연결된 메뉴판에 메뉴를 출력
     public GameObject menu;
     private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.tag == "Guest" && gameObject.tag == "Waypoint_Counter"){
+        if(other.gameObject.tag == "Guest" && this.gameObject.tag == "Waypoint_Counter"){
+            Debug.Log("dfjsadjfsdlakfj");
             flag = true;
             menu.GetComponent<Show_Menu>().Display_Menu();
         }
     }
 
     private void OnTriggerExit(Collider other) {
-        if(other.tag == "Guest"){
+        if(other.gameObject.tag == "Guest"){
             flag = false;
         }
     }

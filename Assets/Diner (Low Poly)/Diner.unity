@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10076,6 +10076,7 @@ GameObject:
   - component: {fileID: 786462873}
   - component: {fileID: 786462872}
   - component: {fileID: 786462875}
+  - component: {fileID: 786462876}
   m_Layer: 0
   m_Name: guest_stop_3
   m_TagString: Waypoint_Counter
@@ -10162,6 +10163,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flag: 1
   menu: {fileID: 0}
+--- !u!65 &786462876
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786462871}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &788111584
 GameObject:
   m_ObjectHideFlags: 0
@@ -13683,6 +13705,7 @@ GameObject:
   - component: {fileID: 938971881}
   - component: {fileID: 938971880}
   - component: {fileID: 938971883}
+  - component: {fileID: 938971884}
   m_Layer: 0
   m_Name: guest_stop_1
   m_TagString: Waypoint_Counter
@@ -13768,7 +13791,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flag: 1
-  menu: {fileID: 0}
+  menu: {fileID: 1656025136}
+--- !u!65 &938971884
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938971879}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1001 &939737007
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34950,6 +34994,7 @@ GameObject:
   - component: {fileID: 2106399295}
   - component: {fileID: 2106399294}
   - component: {fileID: 2106399297}
+  - component: {fileID: 2106399298}
   m_Layer: 0
   m_Name: guest_stop_2
   m_TagString: Waypoint_Counter
@@ -35035,7 +35080,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flag: 0
-  menu: {fileID: 0}
+  menu: {fileID: 1656025136}
+--- !u!65 &2106399298
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106399293}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1001 &2111312899
 PrefabInstance:
   m_ObjectHideFlags: 0

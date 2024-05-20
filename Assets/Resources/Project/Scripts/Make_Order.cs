@@ -40,9 +40,4 @@ public class Make_Order : MonoBehaviour
         //리스트의 맨 마지막에는 위에 오는 빵이 있어야 한다
         order.Add((Ing_List)bunU_num);
     }
-
-    public List<Ing_List> getList(){
-        return order;
-    }
-
 }
