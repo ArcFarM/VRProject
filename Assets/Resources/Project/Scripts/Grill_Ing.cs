@@ -7,10 +7,20 @@ public class Grill_Ing : MonoBehaviour
 {
     Dictionary<GameObject, GameObject> grillable = new Dictionary<GameObject, GameObject>();
     public List<GameObject> grillable_ing = new List<GameObject>();
-
+    public GameObject grillEffect;
+    private int grillObjectCounter = 0;
 
     void Start(){
         Set_Dict();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.GetComponent<Grillable>() != null)
+        {
+            grillEffect.SetActive(true);
+            grillObjectCounter++;
+        }
     }
 
     private void OnCollisionStay(Collision collision)
@@ -21,6 +31,16 @@ public class Grill_Ing : MonoBehaviour
             GameObject refer_obj = Resources.Load<GameObject>("Project/Prefab/Ingredient/" + reference.ToString());
             //그릴 위에 올라간 재료가 구울 수 있는 재료일 때 시간을 더하기
             if(grillable.ContainsKey(refer_obj)) collision.gameObject.GetComponent<Grillable>().collisionTime += Time.deltaTime;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (grillObjectCounter > 0)
+            grillObjectCounter--;
+        if(grillObjectCounter == 0)
+        {
+            grillEffect.SetActive(false);
         }
     }
 
