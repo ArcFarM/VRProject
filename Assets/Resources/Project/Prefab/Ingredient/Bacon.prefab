@@ -429,6 +429,10 @@ PrefabInstance:
       value: Bacon Slice Small
       objectReference: {fileID: 0}
     - target: {fileID: 3687639637439098400, guid: 8b12f1490390483a98683190665d31cb, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687639637439098400, guid: 8b12f1490390483a98683190665d31cb, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
