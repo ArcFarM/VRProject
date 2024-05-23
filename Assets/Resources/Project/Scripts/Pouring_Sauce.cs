@@ -8,13 +8,35 @@ using UnityEngine.InputSystem;
 
 public class Pouring_Sauce : MonoBehaviour
 {
-    public GameObject Poured_Bread;
+    Dictionary<GameObject, GameObject> saucable = new Dictionary<GameObject, GameObject>();
+    public List<GameObject> saucable_ing = new List<GameObject>();
+    //public GameObject sauceEffect;
+
+    private void Start()
+    {
+        Set_Dict();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name.Contains("Bun"))
+        if (other.gameObject.GetComponent<Saucable>() != null)
         {
-            Instantiate(Poured_Bread, other.transform.position, Quaternion.identity);
-            other.gameObject.SetActive(false);
+            Debug.Log("onTriggerEnter: " + other.gameObject.name);
+            Ing_List reference = other.gameObject.GetComponent<Saucable>().refer;
+            Debug.Log("reference: " + reference);
+            GameObject refer_obj = Resources.Load<GameObject>("Project/Prefab/Ingredient/" + reference.ToString());
+            if (saucable.ContainsKey(refer_obj))
+            {
+                other.gameObject.GetComponent<Saucable>().isValid = true;
+            }
+        }
+    }
+
+    void Set_Dict()
+    {
+        for(int i = 0; i < saucable.Count; i++)
+        {
+            saucable.Add(saucable_ing[i], saucable_ing[i]);
         }
     }
 }
