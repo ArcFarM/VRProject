@@ -324,3 +324,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Poured_Bread: {fileID: 7245633271440794668, guid: 61e6a1665123a5f4b82156fb551ce743, type: 3}
+  rightTriggerAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Right Trigger
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 2d6d82cd-e13a-4a2f-9fab-c9331ae6db64
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 5040942267363661032, guid: de273d2a1ba6fa444ae7d62291f665c1, type: 3}
+  leftTriggerAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Left Trigger
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 683b6092-9bb5-4407-af9d-2f5a8804d1cb
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 8351653031545141600, guid: de273d2a1ba6fa444ae7d62291f665c1, type: 3}
