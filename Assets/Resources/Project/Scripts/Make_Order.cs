@@ -25,7 +25,7 @@ public class Make_Order : MonoBehaviour
         int count = UnityEngine.Random.Range(1, 4) + level; // 빵과 빵 사이에는 level + 1 ~ 3개의 재료
 
         int bunL_num = UnityEngine.Random.Range(0, 5); //밑에 오는 빵은 5종류
-        int bunU_num = UnityEngine.Random.Range(5, 10); //위에 오는 빵은 5종류
+        int bunU_num = UnityEngine.Random.Range(5, 11); //위에 오는 빵은 6종류
 
         //리스트의 맨 처음에는 밑에 오는 빵이 있어야 하고,
         order.Add((Ing_List)bunL_num);
@@ -40,4 +40,6 @@ public class Make_Order : MonoBehaviour
         //리스트의 맨 마지막에는 위에 오는 빵이 있어야 한다
         order.Add((Ing_List)bunU_num);
     }
+
+
 }
