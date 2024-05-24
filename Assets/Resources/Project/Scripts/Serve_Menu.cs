@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Ing_Enum;
 
 public class Serve_Menu : MonoBehaviour
 {
@@ -16,13 +17,13 @@ public class Serve_Menu : MonoBehaviour
     }
 
     //손님 받아오기 및 손님 초기화
-    void GetGuest(){
+    public void GetGuest(){
         //null Check
         if(counter.GetComponent<OrderWP_flag>().guest == null) return;
         guest = counter.GetComponent<OrderWP_flag>().guest;
     }
     
-    void NullGuest(){
+    public void NullGuest(){
         //손님이 나갔는 지 확인
         if(counter.GetComponent<OrderWP_flag>().guest != null) return;
         guest = null;
@@ -52,7 +53,8 @@ public class Serve_Menu : MonoBehaviour
 
     //서빙용 접시에 음식이 올라갔다면 메뉴가 맞는 지 확인
     void OnCollisionEnter(Collision collision){
-        bool result;
+        //null을 피하기 위한 초기화
+        bool result = false;
         if(collision.gameObject.tag == "Ingredient") 
             result = Check_Menu(collision.gameObject);
         //메뉴가 맞다면 손님 퇴장, 메뉴 치우기는 다른 스크립트에서 처리
