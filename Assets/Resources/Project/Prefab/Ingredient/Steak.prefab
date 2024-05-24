@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -4717263211860223624}
   - component: {fileID: -6266410988236425978}
   - component: {fileID: -4734173793102728506}
+  - component: {fileID: -2973531248605546872}
   m_Layer: 0
   m_Name: Steak
   m_TagString: Ingredient
@@ -316,3 +317,16 @@ MonoBehaviour:
   cookedObject: {fileID: 5657329893338904949, guid: 69e8aebba8885b74e8ea9677dd9ad931, type: 3}
   refer: 22
   collisionTime: 0
+--- !u!114 &-2973531248605546872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8281452256979724152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a3178e9c45aeb409b10a3a45bbc957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ing: 0

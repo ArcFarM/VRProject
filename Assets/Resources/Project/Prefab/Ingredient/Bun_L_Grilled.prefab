@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8528036527760758893}
   - component: {fileID: 6066896055881663293}
   - component: {fileID: 7709801960313128655}
+  - component: {fileID: -5193357130670362243}
   m_Layer: 0
   m_Name: Bun_L_Grilled
   m_TagString: Ingredient
@@ -316,3 +317,16 @@ MonoBehaviour:
   saucedObject: {fileID: 7245633271440794668, guid: 61e6a1665123a5f4b82156fb551ce743, type: 3}
   refer: 1
   isValid: 0
+--- !u!114 &-5193357130670362243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402028771074156158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a3178e9c45aeb409b10a3a45bbc957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ing: 0

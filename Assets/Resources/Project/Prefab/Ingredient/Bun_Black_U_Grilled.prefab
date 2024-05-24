@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6024780157136262199}
   - component: {fileID: -3846434486575889977}
   - component: {fileID: -5552603074401038980}
+  - component: {fileID: -7551973621504982079}
   m_Layer: 0
   m_Name: Bun_Black_U_Grilled
   m_TagString: Ingredient
@@ -300,3 +301,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85eb2b5cd5fd8eb4db5b305cf3a1ef6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-7551973621504982079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933151333008272995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a3178e9c45aeb409b10a3a45bbc957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ing: 0

@@ -10,7 +10,6 @@ public class OrderWP_flag : MonoBehaviour
     public GameObject menu;
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.tag == "Guest" && this.gameObject.tag == "Waypoint_Counter"){
-            Debug.Log("dfjsadjfsdlakfj");
             flag = true;
             menu.GetComponent<Show_Menu>().Display_Menu();
         }
@@ -19,6 +18,10 @@ public class OrderWP_flag : MonoBehaviour
     private void OnTriggerExit(Collider other) {
         if(other.gameObject.tag == "Guest"){
             flag = false;
+        }
+        //카운터에서 손님이 나가면 메뉴판 지우기
+        if(other.gameObject.tag == "Guest" && gameObject.tag == "Waypoint_Counter"){
+            menu.GetComponent<Show_Menu>().Discard_Menu();
         }
     }
 }

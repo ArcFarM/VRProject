@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -3647931352280003344}
   - component: {fileID: -6197545991200345935}
   - component: {fileID: 689560658999717034}
+  - component: {fileID: -6185788786559799514}
   m_Layer: 0
   m_Name: Bun_U
   m_TagString: Ingredient
@@ -316,3 +317,16 @@ MonoBehaviour:
   cookedObject: {fileID: 2630686101990820901, guid: 9d17363c1f423e24f812cb66ac60b7d5, type: 3}
   refer: 5
   collisionTime: 0
+--- !u!114 &-6185788786559799514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2377033798143669319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a3178e9c45aeb409b10a3a45bbc957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ing: 0

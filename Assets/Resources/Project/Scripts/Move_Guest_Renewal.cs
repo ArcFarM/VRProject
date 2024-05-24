@@ -12,8 +12,9 @@ public class Move_Guest_Renewal : MonoBehaviour
     public float MoveSpeed = 3.0f;
     public float RotationSpeed = 45.0f;
     public float RotationAngle = -90.0f;
-    //최종 목적지지
+    //최종 목적지와 손님 퇴장지점
     private GameObject last_target = null;
+    public GameObject guest_out;
     //index
     public int index = 0;
 
@@ -22,7 +23,10 @@ public class Move_Guest_Renewal : MonoBehaviour
         //카운터 + 대기실 자리 중 빈 자리를 찾기
         Find_Empty();
         //TODO : 빈 자리가 아예 없다면 주문 실패로 판정하고 라이프 차감
-        //if(last_target == null) life--;
+        /*if(last_target == null){
+            life--;
+            Go_Outside();
+        }*/
         //경유지에 last target 넣기
         waypoints.Add(last_target);
         StartCoroutine(Move_Customer(waypoints[index]));
@@ -91,5 +95,11 @@ public class Move_Guest_Renewal : MonoBehaviour
             gameObject.SetActive(false);
             UnityEngine.Object.Destroy(gameObject);
         }
+    }
+    
+    //손님 퇴장하기
+    public void Go_Outside(){
+        transform.position = Vector3.MoveTowards(transform.position, guest_out.transform.position
+                                                    , MoveSpeed * Time.deltaTime);
     }
 }

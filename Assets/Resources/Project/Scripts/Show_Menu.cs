@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -50,7 +51,19 @@ public class Show_Menu : MonoBehaviour {
             //메뉴를 화면에 표시
             GameObject newIngredient = Instantiate(ingredient, menu_arr[i].transform.position, Quaternion.identity);
             //메뉴가 움직이지 않도록 설정
+            newIngredient.GetComponent<XRGrabInteractable>().enabled = false;
             newIngredient.GetComponent<Rigidbody>().isKinematic = true;
+            //메뉴를 회전하고 중앙에 배치
+            newIngredient.transform.Rotate(90, 0, 0);
+            newIngredient.transform.position = menu_arr[i].transform.position + new Vector3(0, 0.1f, 0.05f);
         }
+    }
+
+    public void Discard_Menu(){
+        //메뉴판 지우기 및 리스트 초기화
+        for(int i = 0; i < menu_list.Count; i++){
+            Destroy(menu_arr[i].transform.GetChild(0).gameObject);
+        }
+        ing_list.Clear();
     }
 }
