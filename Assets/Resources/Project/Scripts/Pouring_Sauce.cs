@@ -21,9 +21,7 @@ public class Pouring_Sauce : MonoBehaviour
     {
         if (other.gameObject.GetComponent<Saucable>() != null)
         {
-            Debug.Log("onTriggerEnter: " + other.gameObject.name);
             Ing_List reference = other.gameObject.GetComponent<Saucable>().refer;
-            Debug.Log("reference: " + reference);
             GameObject refer_obj = Resources.Load<GameObject>("Project/Prefab/Ingredient/" + reference.ToString());
             if (saucable.ContainsKey(refer_obj))
             {
@@ -34,7 +32,7 @@ public class Pouring_Sauce : MonoBehaviour
 
     void Set_Dict()
     {
-        for(int i = 0; i < saucable.Count; i++)
+        for(int i = 0; i < saucable_ing.Count; i++)
         {
             saucable.Add(saucable_ing[i], saucable_ing[i]);
         }
