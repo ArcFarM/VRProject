@@ -1,10 +1,12 @@
 using UnityEngine;
 using System.Collections;
+using Ing_Enum;
 
 public class Duplicate_Ingredient : MonoBehaviour
 {
     //복제할 재료
     public GameObject ingredient;
+    public Ing_List ing_tag;
     //오브젝트 생성을 기다릴 시간
     float waitTime = 1.0f;
     //충돌이 존재하지 않는 시간
@@ -24,10 +26,10 @@ public class Duplicate_Ingredient : MonoBehaviour
         }
     }
 
-    //대상 위치에 일정 시간 이상 충돌하고 있는 물체가 없다면 복제본을 생성
+    //대상 위치에 일정 시간 이상 충돌하고 있는 물체가 없다면 + 해당 Duplicator에 할당된 재료라면 복제본을 생성
     private void OnCollisionExit(Collision collision)
     {
-        if(collision.gameObject.tag.Contains("Ingredient")){
+        if(collision.gameObject.tag.Contains("Ingredient") && collision.gameObject.GetComponent<Ing_Code>().ing == ing_tag){
             //idleTime을 현재 시간으로 설정
             idleTime = Time.time;
             //waitTime만큼 대기한 후 복제를 실시하는 코루틴 실행
