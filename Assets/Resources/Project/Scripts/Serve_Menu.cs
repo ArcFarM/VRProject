@@ -11,11 +11,6 @@ public class Serve_Menu : MonoBehaviour
     public GameObject guest;
     public GameObject counter;
 
-    void Start()
-    {
-        GetGuest();
-    }
-
     //손님 받아오기 및 손님 초기화
     public void GetGuest(){
         //null Check

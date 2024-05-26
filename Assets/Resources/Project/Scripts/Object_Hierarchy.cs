@@ -9,13 +9,18 @@ public class Object_Hierarchy : MonoBehaviour {
         if(collision.gameObject.tag != "Ingredient") return; // 재료 오브젝트가 아니면 무시한다.
 
         if(transform.position.y < collision.transform.position.y) {
-            // 둘 중 y좌표가 더 낮은 오브젝트를 기준으로 x좌표와 z좌표를 동기화
+            // 속도를 없애고, 둘 중 y좌표가 더 낮은 오브젝트를 기준으로 x좌표와 z좌표를 동기화
             collision.rigidbody.velocity = Vector3.zero;
             GetComponent<Rigidbody>().velocity = Vector3.zero;
             //물체의 y좌표만큼 띄우기
             Vector3 p_position = transform.position;
             Vector3 c_position = collision.transform.position;
-            c_position.y = p_position.y + gameObject.GetComponent<Collider>().bounds.size.y;
+            c_position.x = p_position.x;
+            c_position.y = p_position.y + gameObject.GetComponent<Collider>().bounds.size.y + 0.01f;
+            c_position.z = p_position.z;
+
+            transform.position = p_position;
+            collision.transform.position = c_position;
 
             //collision.transform.position = new Vector3(p_position.x, p_position.y + GetComponent<Renderer>().bounds.size.y, p_position.z);
             //두 물체의 회전 초기화
