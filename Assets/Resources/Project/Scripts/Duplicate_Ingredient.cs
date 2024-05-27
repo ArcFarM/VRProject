@@ -13,17 +13,26 @@ public class Duplicate_Ingredient : MonoBehaviour
     float idleTime = 0.0f;
     //코루틴 변수
     IEnumerator dupCoroutine;
+    IEnumerator stackCoroutine;
+
+    //물체 쌓기 컴포넌트 켜기 대기시간
+    float stack_waitTime = 1.5f;
 
     IEnumerator Do_Duplicate()
     {
         //일정 시간만큼 기다리기
         yield return new WaitForSeconds(waitTime);
-        Debug.Log(Time.time - idleTime);
         //충돌 없으면 복제
         if(Time.time - idleTime > waitTime){
             GameObject dup = Instantiate(ingredient, transform.position, Quaternion.identity);
             dup.tag = "Ingredient";
         }
+    }
+
+    IEnumerator Stack_Enable(GameObject obj){
+        yield return new WaitForSeconds(stack_waitTime);
+        obj.GetComponent<Object_Hierarchy>().enabled = true;
+        Debug.Log("Complete");
     }
 
     //대상 위치에 일정 시간 이상 충돌하고 있는 물체가 없다면 + 해당 Duplicator에 할당된 재료라면 복제본을 생성
@@ -35,6 +44,8 @@ public class Duplicate_Ingredient : MonoBehaviour
             //waitTime만큼 대기한 후 복제를 실시하는 코루틴 실행
             dupCoroutine = Do_Duplicate();
             StartCoroutine(dupCoroutine);
+            stackCoroutine = Stack_Enable(collision.gameObject);
+            StartCoroutine(stackCoroutine);
         }
     }
 
