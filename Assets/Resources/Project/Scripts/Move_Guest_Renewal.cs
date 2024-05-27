@@ -30,7 +30,17 @@ public class Move_Guest_Renewal : MonoBehaviour
         //경유지에 last target 넣기
         waypoints.Add(last_target);
         StartCoroutine(Move_Customer(waypoints[index]));
+    }
 
+    //손님 퇴장 코루틴
+    IEnumerator Go_Outside_Coroutine(){
+        while(Vector3.Distance(transform.position, guest_out.transform.position) > 0.01f){
+            transform.position = Vector3.MoveTowards(transform.position, guest_out.transform.position
+                                                    , MoveSpeed * Time.deltaTime);
+            yield return null;
+        }
+        gameObject.SetActive(false);
+        UnityEngine.Object.Destroy(gameObject);
     }
 
     IEnumerator Move_Customer(GameObject waypoint)
@@ -99,7 +109,6 @@ public class Move_Guest_Renewal : MonoBehaviour
     
     //손님 퇴장하기
     public void Go_Outside(){
-        transform.position = Vector3.MoveTowards(transform.position, guest_out.transform.position
-                                                    , MoveSpeed * Time.deltaTime);
+        StartCoroutine(Go_Outside_Coroutine());
     }
 }

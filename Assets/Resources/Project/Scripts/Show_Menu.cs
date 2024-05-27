@@ -56,6 +56,8 @@ public class Show_Menu : MonoBehaviour {
             //메뉴를 회전하고 중앙에 배치
             newIngredient.transform.Rotate(0, 0, -90);
             newIngredient.transform.position = menu_arr[i].transform.position + new Vector3(0.1f, 0.1f, 0);
+            //각 메뉴를 부모로 할당
+            newIngredient.transform.parent = menu_arr[i].transform;
         }
     }
 
