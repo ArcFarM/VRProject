@@ -54,9 +54,11 @@ public class Serve_Menu : MonoBehaviour
             result = Check_Menu(collision.gameObject);
         //메뉴가 맞다면 손님 퇴장, 메뉴 치우기는 다른 스크립트에서 처리
         if(result){
+            Debug.Log("Order Complete");
             guest.GetComponent<Move_Guest_Renewal>().Go_Outside();
         } else {
             //목숨 차감 추가 필요
+            Deubg.Log("Order Failed");
             guest.GetComponent<Move_Guest_Renewal>().Go_Outside();
         }
     }  

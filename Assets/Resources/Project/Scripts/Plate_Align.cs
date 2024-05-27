@@ -10,6 +10,12 @@ public class Plate_Align : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
+        //꺼져있던 재료 쌓기 메서드를 켜기
+        if(other.gameObject.tag == "Ingredient"){
+            if(other.gameObject.GetComponent<Object_Hierarchy>().enabled == false){
+                other.gameObject.GetComponent<Object_Hierarchy>().enabled = true;
+            }
+        }
         //isKinematic이 켜져있는 '위에 놓인 재료'는 무시
         if (other.gameObject.tag == "Ingredient" && other.gameObject.GetComponent<Rigidbody>().isKinematic == false)
         {

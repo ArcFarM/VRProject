@@ -5,6 +5,11 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Object_Hierarchy : MonoBehaviour {
 
+    void Start(){
+        //접시에 닿기 전까지는 비활성화 상태
+        gameObject.GetComponent<Object_Hierarchy>().enabled = false;
+    }
+
     private void OnCollisionEnter(Collision collision) {
         if(collision.gameObject.tag != "Ingredient") return; // 재료 오브젝트가 아니면 무시한다.
 
