@@ -5,14 +5,13 @@ using UnityEngine;
 public class Run_CheckMenu : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    public GameObject parent;
+    
+    void OnTriggerEnter(Collider collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (collision.gameObject.tag == "Ingredient")
+        {
+            parent.GetComponent<Serve_Menu>().Do_Check(collision.gameObject);
+        }
     }
 }

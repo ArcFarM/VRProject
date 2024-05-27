@@ -47,11 +47,11 @@ public class Serve_Menu : MonoBehaviour
     }
 
     //서빙용 접시에 음식이 올라갔다면 메뉴가 맞는 지 확인
-    void OnCollisionEnter(Collision collision){
+    public void Do_Check(GameObject food){
         //null을 피하기 위한 초기화
         bool result = false;
-        if(collision.gameObject.tag == "Ingredient") 
-            result = Check_Menu(collision.gameObject);
+        if(food.tag == "Ingredient") 
+            result = Check_Menu(food);
         //메뉴가 맞다면 손님 퇴장, 메뉴 치우기는 다른 스크립트에서 처리
         if(result){
             Debug.Log("Order Complete");

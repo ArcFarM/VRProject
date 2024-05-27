@@ -32,7 +32,6 @@ public class Duplicate_Ingredient : MonoBehaviour
     IEnumerator Stack_Enable(GameObject obj){
         yield return new WaitForSeconds(stack_waitTime);
         obj.GetComponent<Object_Hierarchy>().enabled = true;
-        Debug.Log("Complete");
     }
 
     //대상 위치에 일정 시간 이상 충돌하고 있는 물체가 없다면 + 해당 Duplicator에 할당된 재료라면 복제본을 생성
