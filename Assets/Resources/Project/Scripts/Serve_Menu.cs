@@ -58,7 +58,7 @@ public class Serve_Menu : MonoBehaviour
             guest.GetComponent<Move_Guest_Renewal>().Go_Outside();
         } else {
             //목숨 차감 추가 필요
-            Deubg.Log("Order Failed");
+            Debug.Log("Order Failed");
             guest.GetComponent<Move_Guest_Renewal>().Go_Outside();
         }
     }  
