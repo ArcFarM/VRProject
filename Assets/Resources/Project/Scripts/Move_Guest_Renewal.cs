@@ -15,6 +15,11 @@ public class Move_Guest_Renewal : MonoBehaviour
     //최종 목적지와 손님 퇴장지점
     private GameObject last_target = null;
     public GameObject guest_out;
+
+    //주문 결과에 따른 손님 색상 변경을 위한 마테리얼
+    public Material this_material;
+    //마테리얼을 적용받을 손님 데이터
+    public GameObject guest;
     //index
     public int index = 0;
 
@@ -110,5 +115,18 @@ public class Move_Guest_Renewal : MonoBehaviour
     //손님 퇴장하기
     public void Go_Outside(){
         StartCoroutine(Go_Outside_Coroutine());
+    }
+
+    //주문 성공/실패에 따라 손님의 색을 다르게 표현
+    public void Red_or_Green(bool order_result){
+        //마테리얼을 받아와서 교체하기
+        Material guest_color = new Material(this_material);
+        guest.GetComponent<Renderer>().material = guest_color;
+        //주문 결과에 따라 손님 색상 변경
+        if(order_result){
+            guest_color.color = Color.green;
+        } else {
+            guest_color.color = Color.red;
+        }
     }
 }

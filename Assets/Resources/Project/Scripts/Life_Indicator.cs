@@ -4,37 +4,26 @@ using UnityEngine;
 
 public class Life_Indicator : MonoBehaviour
 {
-    public GameObject right;
-    public GameObject mid;
-    public GameObject left;
-    public int lifeCount = 3;
+    public int lifeCount;
+    static int life_num = 3;
+    public GameObject[] light = new GameObject[life_num];
 
-    private void Update()
-    {
-        if(lifeCount == 0)
-        {
-            left.SetActive(false);
-            mid.SetActive(false);
-            right.SetActive(false);
-            //life가 0이면 게임 종료
+    void Start(){
+        lifeCount = life_num;
+        Life_Init();
+    }
+
+    private void Life_Init(){
+        for(int i = 0; i < life_num; i++){
+            light[i].SetActive(true);
         }
-        else if(lifeCount == 1)
-        {
-            left.SetActive(true);
-            mid.SetActive(false);
-            right.SetActive(false);
-        }
-        else if(lifeCount == 2)
-        {
-            left.SetActive(true);
-            mid.SetActive(true);
-            right.SetActive(false);
-        }
-        else if(lifeCount == 3)
-        {
-            left.SetActive(true);
-            mid.SetActive(true);
-            right.SetActive(true);
+    }
+
+    public void Set_Life(bool flag){
+        //주문이 실패하면 라이프를 차감
+        if(!flag){
+            light[lifeCount - 1].SetActive(false);
+            lifeCount--;
         }
     }
 }

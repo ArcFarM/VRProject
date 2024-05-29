@@ -11,6 +11,8 @@ public class Serve_Menu : MonoBehaviour
     public GameObject guest;
     public GameObject counter;
 
+    public GameObject life;
+
     //손님 받아오기 및 손님 초기화
     public void GetGuest(){
         //null Check
@@ -50,15 +52,23 @@ public class Serve_Menu : MonoBehaviour
     public void Do_Check(GameObject food){
         //null을 피하기 위한 초기화
         bool result = false;
+        //null check : 손님이 없을 때 서빙 접시에 음식을 놓으면 음식을 삭제한다
+        if(guest == null) {
+            Destroy(food);
+            return;
+        }
         if(food.tag == "Ingredient") 
             result = Check_Menu(food);
         //메뉴가 맞다면 손님 퇴장, 메뉴 치우기는 다른 스크립트에서 처리
         if(result){
             Debug.Log("Order Complete");
+            guest.GetComponent<Move_Guest_Renewal>().Red_or_Green(result);
             guest.GetComponent<Move_Guest_Renewal>().Go_Outside();
         } else {
-            //목숨 차감 추가 필요
+            //목숨 차감
+            life.GetComponent<Life_Indicator>().Set_Life(false);
             Debug.Log("Order Failed");
+            guest.GetComponent<Move_Guest_Renewal>().Red_or_Green(result);
             guest.GetComponent<Move_Guest_Renewal>().Go_Outside();
         }
     }  
