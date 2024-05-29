@@ -39,6 +39,11 @@ public class Move_Guest_Renewal : MonoBehaviour
 
     //손님 퇴장 코루틴
     IEnumerator Go_Outside_Coroutine(){
+        while(Vector3.Distance(transform.position, waypoints[index-1].transform.position) > 0.01f){
+            transform.position = Vector3.MoveTowards(transform.position, waypoints[index-1].transform.position
+                                                    , MoveSpeed * Time.deltaTime);
+            yield return null;
+        }
         while(Vector3.Distance(transform.position, guest_out.transform.position) > 0.01f){
             transform.position = Vector3.MoveTowards(transform.position, guest_out.transform.position
                                                     , MoveSpeed * Time.deltaTime);
