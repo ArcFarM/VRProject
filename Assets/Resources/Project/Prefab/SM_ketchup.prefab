@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3855320542903498535}
   - component: {fileID: 5936381106355792888}
   - component: {fileID: 5024571174375227730}
+  - component: {fileID: 6315727219699884753}
   m_Layer: 0
   m_Name: SM_ketchup
   m_TagString: Untagged
@@ -325,3 +326,15 @@ CapsuleCollider:
   m_Height: 0.5679276
   m_Direction: 1
   m_Center: {x: 0, y: 0.27127218, z: 0.000000009313226}
+--- !u!114 &6315727219699884753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7662513934395761529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1881be8fa16eb48b72172ca92358ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
