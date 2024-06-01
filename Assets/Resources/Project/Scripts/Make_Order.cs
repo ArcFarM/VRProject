@@ -7,22 +7,18 @@ public class Make_Order : MonoBehaviour
 {
     //난이도 조절을 위한 스테이지 카운터
     //public GameObject stageCounter;
-    private int level;
+    public int level;
     public List<Ing_List> order = new List<Ing_List>();
     // Start is called before the first frame update
     void Start()
     {
-        //level = stageCounter.GetComponent<StageCounter>().level;
-
-        //임시용
-        level = 1;
         Add_Ing();
     }
 
     void Add_Ing()
     {
         var values = System.Enum.GetValues(typeof(Ing_List));
-        int count = UnityEngine.Random.Range(1, 4) + level; // 빵과 빵 사이에는 level + 1 ~ 3개의 재료
+        int count = level; // 햄버거는 최대 8개의 재료를 가질 수 있으며, 레벨에 따라 수가 달라짐
 
         int bunL_num = UnityEngine.Random.Range(0, 5); //밑에 오는 빵은 5종류
         int bunU_num = UnityEngine.Random.Range(5, 11); //위에 오는 빵은 6종류
