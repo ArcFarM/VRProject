@@ -13,7 +13,6 @@ public class Show_Menu : MonoBehaviour {
     public GameObject[] menu_arr = new GameObject[menu_num];
 
     //메뉴를 가지고 올 손님과 손님의 리스트
-    public GameObject guest;
     public List<Ing_List> menu_list = new List<Ing_List>();
 
     //메뉴판이 보여줄 손님이 위치할 자리
@@ -38,7 +37,7 @@ public class Show_Menu : MonoBehaviour {
     }
 
     //메뉴를 화면에 표시하는 메서드
-    public void Display_Menu(){
+    public void Display_Menu(GameObject guest){
         Debug.Log("Menu Display On");
         //손님의 메뉴 리스트를 가져옴
         menu_list = guest.GetComponent<Make_Order>().order;

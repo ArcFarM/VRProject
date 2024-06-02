@@ -5,8 +5,8 @@ using UnityEngine;
 public class Guest_Loading : MonoBehaviour
 {
     public GameObject guest_spawnpoint;
-    //새로 생성할 손님에게 넘겨줄 정보를 저장할 참조용 손님
-    public GameObject guest_refer;
+    //손님 정보를 가져올 싱글톤
+    GameManager gm;
     //생성할 손님 기본 프리팹
     public GameObject guest_prefab;
 
@@ -53,16 +53,14 @@ public class Guest_Loading : MonoBehaviour
         guest.SetActive(true);
 
         difficulty++;
-        coroutine_flag = true;
         yield return new WaitForSeconds(spawn_time);
+        coroutine_flag = true;
     }
 
     void Get_Guest_Data(GameObject guest_receiver){
         //guest_refer에 저장된 경유지 정보를 동기화
-        guest_receiver.GetComponent<Move_Guest_Renewal>().waypoints = guest_refer.GetComponent<Move_Guest_Renewal>().waypoints;
-        guest_receiver.GetComponent<Move_Guest_Renewal>().counters = guest_refer.GetComponent<Move_Guest_Renewal>().counters;
-        guest_receiver.GetComponent<Move_Guest_Renewal>().guest_out = guest_refer.GetComponent<Move_Guest_Renewal>().guest_out;
         guest_receiver.GetComponent<Make_Order>().level = difficulty;
+        guest_receiver.tag = "Guest";
     }
 
 }

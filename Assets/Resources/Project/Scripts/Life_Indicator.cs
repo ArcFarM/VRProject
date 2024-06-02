@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Life_Indicator : MonoBehaviour
 {
-    public int lifeCount;
-    static int life_num = 3;
-    public GameObject[] light = new GameObject[life_num];
+    GameManager gm;
+    int life_num;
+    int lifeCount;
+    public GameObject[] light;
 
     void Start(){
-        lifeCount = life_num;
+        gm = GameManager.pub_ins;
+        life_num = gm.life_init;
+        lifeCount = gm.life_now;
         Life_Init();
     }
 

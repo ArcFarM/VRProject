@@ -7,13 +7,14 @@ using UnityEngine;
 
 public class Move_Guest_Renewal : MonoBehaviour
 {
-    public List<GameObject> waypoints;
-    public List<GameObject> counters;
+    GameManager gm;
+    List<GameObject> waypoints;
+    List<GameObject> counters;
     public float MoveSpeed = 3.0f;
     public float RotationSpeed = 45.0f;
     public float RotationAngle = -90.0f;
     //최종 목적지와 손님 퇴장지점
-    private GameObject last_target = null;
+    public GameObject last_target = null;
     public GameObject guest_out;
 
     //주문 결과에 따른 손님 색상 변경을 위한 마테리얼
@@ -25,13 +26,16 @@ public class Move_Guest_Renewal : MonoBehaviour
 
     void Start()
     {
+        gm = GameManager.pub_ins;
+        waypoints = new List<GameObject>(gm.waypoints);
+        counters = gm.counters;
         //카운터 + 대기실 자리 중 빈 자리를 찾기
         Find_Empty();
         //TODO : 빈 자리가 아예 없다면 주문 실패로 판정하고 라이프 차감
-        /*if(last_target == null){
-            life--;
-            Go_Outside();
-        }*/
+        if(last_target == null){
+            gm.life_now--;
+            StartCoroutine(Go_Outside_Coroutine());
+        }
         //경유지에 last target 넣기
         waypoints.Add(last_target);
         StartCoroutine(Move_Customer(waypoints[index]));
@@ -39,6 +43,7 @@ public class Move_Guest_Renewal : MonoBehaviour
 
     //손님 퇴장 코루틴
     IEnumerator Go_Outside_Coroutine(){
+        index = waypoints.Count - 1;
         while(Vector3.Distance(transform.position, waypoints[index-1].transform.position) > 0.01f){
             transform.position = Vector3.MoveTowards(transform.position, waypoints[index-1].transform.position
                                                     , MoveSpeed * Time.deltaTime);
@@ -86,12 +91,11 @@ public class Move_Guest_Renewal : MonoBehaviour
     //빈 자리 찾기
     void Find_Empty(){
         for(int i = 0; i < counters.Count; i++){
-                    Debug.Log("Finging Empty Space... " + i);
             //빈 카운터 자리 찾기
             if(counters[i].GetComponent<OrderWP_flag>().flag == false){
                 last_target = counters[i];
                 counters[i].GetComponent<OrderWP_flag>().flag = true;
-                return;
+                break;
             }
         }
     }

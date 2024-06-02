@@ -10,7 +10,10 @@ public class GameManager : MonoBehaviour
         get {
             if(prv_ins == null) {
                 //Awake로 할당되었지만 null 점검을 실행
-                prv_ins = FindObjectOfType<GameManager>();
+                //만약 존재하지 않는다면 새로 생성해서 자기 자신으로 할당
+                GameObject gm = new GameObject("GameManager");
+                prv_ins = gm.AddComponent<GameManager>();
+                DontDestroyOnLoad(gm);
             }
             return prv_ins;
         }
@@ -21,8 +24,9 @@ public class GameManager : MonoBehaviour
     public List<GameObject> waypoints;
     public List<GameObject> counters;
 
-    //게임의 라이프
-    public int life;
+    //게임의 초기 목숨과 현재 목숨
+    public int life_init = 3;
+    public int life_now = 3;
 
 
     void Awake(){

@@ -17,7 +17,7 @@ public class OrderWP_flag : MonoBehaviour
             flag = true;
             guest = other.gameObject;
             server.GetComponent<Serve_Menu>().GetGuest();
-            menu.GetComponent<Show_Menu>().Display_Menu();
+            menu.GetComponent<Show_Menu>().Display_Menu(guest);
         }
     }
 
