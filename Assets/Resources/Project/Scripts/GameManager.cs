@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Ing_Enum;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class GameManager : MonoBehaviour
     public int life_init = 3;
     public int life_now = 3;
 
+    //메뉴 표시에 사용할 재료 리스트
+    public List<GameObject> ing_list = new List<GameObject>();
 
     void Awake(){
         //접근을 위한 초기화
@@ -39,6 +42,16 @@ public class GameManager : MonoBehaviour
         } else {
             //이미 존재하고 있으므로 존재할 이유가 없음, 파괴
             Destroy(gameObject);
+        }
+
+        // Ing_List 열거형의 각 값에 대해
+        foreach (Ing_List ing in System.Enum.GetValues(typeof(Ing_List)))
+        {
+            // 해당 이름의 프리팹을 로드
+            GameObject prefab = Resources.Load<GameObject>("Project/Prefab/Ingredient/" + ing.ToString());
+
+            // ingredient_list에 추가
+            ing_list.Add(prefab);
         }
     }
 

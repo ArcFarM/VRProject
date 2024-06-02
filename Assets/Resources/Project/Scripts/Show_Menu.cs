@@ -24,16 +24,12 @@ public class Show_Menu : MonoBehaviour {
     //현재 메뉴를 표시해야 하는 지를 결정하는 플래그
     public bool flag = true;
 
-    void Awake() {
-        // Ing_List 열거형의 각 값에 대해
-        foreach (Ing_List ing in Enum.GetValues(typeof(Ing_List)))
-        {
-            // 해당 이름의 프리팹을 로드
-            GameObject prefab = Resources.Load<GameObject>("Project/Prefab/Ingredient/" + ing.ToString());
+    //게임 매니저에 저장된 재료 리스트 가져오기
+    GameManager gm;
 
-            // ingredient_list에 추가
-            ing_list.Add(prefab);
-        }
+    void Start() {
+        gm = GameManager.pub_ins;
+        ing_list = gm.ing_list;
     }
 
     //메뉴를 화면에 표시하는 메서드
