@@ -22,6 +22,8 @@ public class Guest_Loading : MonoBehaviour
     //손님의 레벨 (주문 난이도)
     int difficulty = 1;
     static int max_difficulty = 8;
+    //손님퇴장 지점
+    public GameObject guest_out;
 
     void Update(){
         //난이도는 최대 8까지
@@ -61,6 +63,7 @@ public class Guest_Loading : MonoBehaviour
         //guest_refer에 저장된 경유지 정보를 동기화
         guest_receiver.GetComponent<Make_Order>().level = difficulty;
         guest_receiver.tag = "Guest";
+        guest_receiver.GetComponent<Move_Guest_Renewal>().guest_out = guest_out;
     }
 
 }
