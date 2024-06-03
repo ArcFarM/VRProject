@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Diner (Low Poly)/Diner.unity
+    path: Assets/Resources/Project/Scenes/Diner.unity
     guid: 71790b348ad18e14fa6bd36856ddb422
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: d1ca9cb467b330a4598ef705c66bc0bd, type: 2}
