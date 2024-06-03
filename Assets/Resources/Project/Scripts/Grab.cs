@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class Grab : MonoBehaviour
 {
-    private XRGrabInteractable grabInteractable;
+    public XRGrabInteractable grabInteractable;
     void Start()
     {
-        grabInteractable = GetComponent<XRGrabInteractable>();
-
         if(grabInteractable == null)
         {
             grabInteractable.selectedEnter.AddListener(OnGrabbed);
