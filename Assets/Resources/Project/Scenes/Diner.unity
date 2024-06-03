@@ -573,13 +573,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2571081735659753223, guid: d9c2779a3cf04d745bd6338dedac34e8, type: 3}
+      propertyPath: otherBurger
+      value: 
+      objectReference: {fileID: 1592054590}
     - target: {fileID: 5124378937164242742, guid: d9c2779a3cf04d745bd6338dedac34e8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.031
       objectReference: {fileID: 0}
     - target: {fileID: 5124378937164242742, guid: d9c2779a3cf04d745bd6338dedac34e8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.471
+      value: 2.54
       objectReference: {fileID: 0}
     - target: {fileID: 5124378937164242742, guid: d9c2779a3cf04d745bd6338dedac34e8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -616,6 +620,10 @@ PrefabInstance:
     - target: {fileID: 5717689103224762309, guid: d9c2779a3cf04d745bd6338dedac34e8, type: 3}
       propertyPath: m_Name
       value: HamMushroomOnionBurger
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717689103224762309, guid: d9c2779a3cf04d745bd6338dedac34e8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9147986010365814406, guid: d9c2779a3cf04d745bd6338dedac34e8, type: 3}
       propertyPath: m_UseGravity
@@ -14281,6 +14289,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CheeseBurger
       objectReference: {fileID: 0}
+    - target: {fileID: 954326167397827313, guid: 62568e124e3f8ce45b9592150b6ecab3, type: 3}
+      propertyPath: otherBurger
+      value: 
+      objectReference: {fileID: 1449815378}
     - target: {fileID: 2732730443224653213, guid: 62568e124e3f8ce45b9592150b6ecab3, type: 3}
       propertyPath: m_UseGravity
       value: 0
@@ -38422,6 +38434,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!1 &1449815378 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5717689103224762309, guid: d9c2779a3cf04d745bd6338dedac34e8, type: 3}
+  m_PrefabInstance: {fileID: 10795825}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1449890106
 GameObject:
   m_ObjectHideFlags: 0
@@ -42221,6 +42238,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1589715509}
   m_CullTransparentMesh: 1
+--- !u!1 &1592054590 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 920370220918441901, guid: 62568e124e3f8ce45b9592150b6ecab3, type: 3}
+  m_PrefabInstance: {fileID: 578237871}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1594490989 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7319183d2048fe4ea31fccaf7a03491, type: 3}

@@ -232,6 +232,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabInteractable: {fileID: 1049740600015392079}
+  otherBurger: {fileID: 5717689103224762309, guid: d9c2779a3cf04d745bd6338dedac34e8, type: 3}
+  isStart: 1
 --- !u!65 &6033498082433451516
 BoxCollider:
   m_ObjectHideFlags: 0
