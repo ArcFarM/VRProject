@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5124378937164242742}
   - component: {fileID: 9147986010365814406}
   - component: {fileID: 3296081936969301327}
+  - component: {fileID: -2571081735659753223}
   m_Layer: 0
   m_Name: HamMushroomOnionBurger
   m_TagString: Untagged
@@ -217,6 +218,19 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &-2571081735659753223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5717689103224762309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b994209998dc80744be21d20b716bcb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabInteractable: {fileID: 3296081936969301327}
 --- !u!1001 &2129385775138895704
 PrefabInstance:
   m_ObjectHideFlags: 0

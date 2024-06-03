@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Grab : MonoBehaviour
 {
     public XRGrabInteractable grabInteractable;
     void Start()
     {
-        if(grabInteractable == null)
+        if(grabInteractable != null)
         {
-            grabInteractable.selectedEnter.AddListener(OnGrabbed);
+            grabInteractable.selectEntered.AddListener(OnGrabbed);
         }
         else
         {
@@ -21,7 +22,7 @@ public class Grab : MonoBehaviour
     {
         if(grabInteractable != null)
         {
-            grabInteractable.selectedEnter.RemoveListener(OnGrabbed);
+            grabInteractable.selectEntered.RemoveListener(OnGrabbed);
         }
     }
 
