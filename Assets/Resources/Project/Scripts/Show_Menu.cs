@@ -61,6 +61,6 @@ public class Show_Menu : MonoBehaviour {
         for(int i = 0; i < menu_list.Count; i++){
             Destroy(menu_arr[i].transform.GetChild(0).gameObject);
         }
-        ing_list.Clear();
+        menu_list.Clear();
     }
 }

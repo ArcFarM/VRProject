@@ -44895,7 +44895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guest_spawnpoint: {fileID: 2196068114781819177}
   guest_prefab: {fileID: 7880365635095096126, guid: c217fe443fac8c64794e8a588f10fd7b, type: 3}
-  guest_out: {fileID: 0}
+  guest_out: {fileID: 3559332714353992810}
 --- !u!4 &1707723010
 Transform:
   m_ObjectHideFlags: 0

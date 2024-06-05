@@ -31,7 +31,6 @@ public class GameManager : MonoBehaviour
 
     //메뉴 표시에 사용할 재료 리스트
     public List<GameObject> ing_list = new List<GameObject>();
-
     void Awake(){
         //접근을 위한 초기화
         if(prv_ins == null) {
