@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2571081735659753223}
   - component: {fileID: 311396732288964774}
   m_Layer: 0
-  m_Name: HamMushroomOnionBurger
+  m_Name: Exit_Burger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5717689103224762309}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.273, y: 1.3017524, z: 34.428253}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

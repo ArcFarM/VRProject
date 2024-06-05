@@ -10,6 +10,14 @@ public class Object_Hierarchy : MonoBehaviour {
         this.enabled = false;
     }
 
+    void Update(){
+        //부모가 있다면 항상 x,z 좌표를 부모와 동기화
+        if(transform.parent != null){
+            Vector3 parent_position = transform.parent.position;
+            transform.position = new Vector3(parent_position.x, transform.position.y, parent_position.z);
+        }
+    }
+
     private void OnCollisionEnter(Collision collision) {
         if(this.enabled){
             if(collision.gameObject.tag != "Ingredient") return; // 재료 오브젝트가 아니면 무시한다.
