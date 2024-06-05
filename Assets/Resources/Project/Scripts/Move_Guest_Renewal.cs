@@ -31,18 +31,32 @@ public class Move_Guest_Renewal : MonoBehaviour
         counters = gm.counters;
         //카운터 + 대기실 자리 중 빈 자리를 찾기
         Find_Empty();
-        //TODO : 빈 자리가 아예 없다면 주문 실패로 판정하고 라이프 차감
-        if(last_target == null){
-            gm.life_now--;
+        //빈 자리가 아예 없다면 손님이 즉시 퇴장하며, 라이프 차감
+        if(last_target == guest_out){
+            waypoints.Add(guest_out);
             StartCoroutine(Go_Outside_Coroutine());
         }
         //경유지에 last target 넣기
-        waypoints.Add(last_target);
-        StartCoroutine(Move_Customer(waypoints[index]));
+        else{
+            waypoints.Add(last_target);
+            StartCoroutine(Move_Customer(waypoints[index]));
+        }
     }
 
     //손님 퇴장 코루틴
     IEnumerator Go_Outside_Coroutine(){
+
+        //경유지 배열을 퇴장용으로 교체
+        waypoints.Clear();
+        waypoints = gm.waypoints_out;
+        //퇴장 경유지로 이동
+        index = 0;
+        StartCoroutine(Move_Customer(waypoints[index]));
+        //목숨 차감 실행
+        gm.Guest_Do_Life_Minus();
+        yield return null;
+        
+        /* 기존 사용 코드
         index = waypoints.Count - 1;
         while(Vector3.Distance(transform.position, waypoints[index-1].transform.position) > 0.01f){
             transform.position = Vector3.MoveTowards(transform.position, waypoints[index-1].transform.position
@@ -55,7 +69,7 @@ public class Move_Guest_Renewal : MonoBehaviour
             yield return null;
         }
         gameObject.SetActive(false);
-        UnityEngine.Object.Destroy(gameObject);
+        UnityEngine.Object.Destroy(gameObject);*/
     }
 
     IEnumerator Move_Customer(GameObject waypoint)
@@ -95,9 +109,10 @@ public class Move_Guest_Renewal : MonoBehaviour
             if(counters[i].GetComponent<OrderWP_flag>().flag == false){
                 last_target = counters[i];
                 counters[i].GetComponent<OrderWP_flag>().flag = true;
-                break;
+                return;
             }
         }
+        last_target = guest_out;
     }
 
     //거리 측정용

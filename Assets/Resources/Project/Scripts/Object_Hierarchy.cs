@@ -5,17 +5,14 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Object_Hierarchy : MonoBehaviour {
 
+    public bool flag = false;
     void Start(){
         //접시에 닿기 전까지는 비활성화 상태
         this.enabled = false;
     }
 
     void Update(){
-        //부모가 있다면 항상 x,z 좌표를 부모와 동기화
-        if(transform.parent != null){
-            Vector3 parent_position = transform.parent.position;
-            transform.position = new Vector3(parent_position.x, transform.position.y, parent_position.z);
-        }
+        if(this.enabled) flag = true;
     }
 
     private void OnCollisionEnter(Collision collision) {

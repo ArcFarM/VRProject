@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Ing_Enum;
+using Unity.Profiling;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,10 +25,13 @@ public class GameManager : MonoBehaviour
     //손님의 이동을 위해 필요한 waypoint와 counter 배열
     public List<GameObject> waypoints;
     public List<GameObject> counters;
+    //손님의 퇴장을 위한 waypoints_out 배열
+    public List<GameObject> waypoints_out;
 
-    //게임의 초기 목숨과 현재 목숨
+    //게임의 초기 목숨과 현재 목숨, 목숨 제어용 오브젝트
     public int life_init = 3;
     public int life_now = 3;
+    public GameObject life;
 
     //메뉴 표시에 사용할 재료 리스트
     public List<GameObject> ing_list = new List<GameObject>();
@@ -54,5 +58,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
+    public void Guest_Do_Life_Minus(){
+        //빈 자리가 없어서 손님이 즉시 퇴장할 때 라이프를 차감하는 용도
+        life_now--;
+        life.GetComponent<Life_Indicator>().Set_Life(false);
+    }
 }

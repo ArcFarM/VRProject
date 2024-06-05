@@ -16,6 +16,10 @@ public class Life_Indicator : MonoBehaviour
         Life_Init();
     }
 
+    void Update(){
+        lifeCount = gm.life_now;
+    }
+
     private void Life_Init(){
         for(int i = 0; i < life_num; i++){
             light[i].SetActive(true);
