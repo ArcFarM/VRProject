@@ -63,4 +63,13 @@ public class GameManager : MonoBehaviour
         life_now--;
         life.GetComponent<Life_Indicator>().Set_Life(false);
     }
+
+    //게임오버 판단용, 최초 실행 시에는 false
+    public bool gameover_flag = false;
+
+    public void GameOver(){
+        gameover_flag = true;
+        //TODO : 씬을 다시 로드하고, 위에 게임 오버 텍스트를 출력
+        //게임오버 텍스트는 플래그가 트루일때만 눈에 보여야 한다
+    }
 }

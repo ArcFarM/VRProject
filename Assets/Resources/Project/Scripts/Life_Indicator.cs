@@ -18,6 +18,7 @@ public class Life_Indicator : MonoBehaviour
 
     void Update(){
         lifeCount = gm.life_now;
+        if(lifeCount == 0) gm.GameOver();
     }
 
     private void Life_Init(){
