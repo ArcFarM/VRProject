@@ -68,7 +68,7 @@ public class Grab : MonoBehaviour
         Debug.Log("Game Started!");
         //게임 시작
         Time.timeScale = 1f;
-        //gameover_flag 초기화
-        gm.gameover_flag = false;
+        //게임 초기화
+        gm.Game_Reset();
     }
 }

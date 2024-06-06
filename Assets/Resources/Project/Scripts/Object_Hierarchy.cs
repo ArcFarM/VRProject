@@ -12,7 +12,18 @@ public class Object_Hierarchy : MonoBehaviour {
     }
 
     void Update(){
-        if(this.enabled) flag = true;
+        if(this.enabled){
+            flag = true;
+            this.GetComponent<XRGrabInteractable>().enabled = true;
+        }
+        if(this.transform.parent != null){
+            Vector3 p_position = transform.parent.position;
+            Vector3 c_position = transform.position;
+            c_position.x = p_position.x;
+            c_position.z = p_position.z;
+            transform.position = c_position;
+            this.transform.rotation = transform.parent.rotation;
+        }
     }
 
     private void OnCollisionEnter(Collision collision) {

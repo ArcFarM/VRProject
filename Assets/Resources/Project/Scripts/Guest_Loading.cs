@@ -12,7 +12,7 @@ public class Guest_Loading : MonoBehaviour
 
     //기본 스폰을 위한 코루틴과 스폰 시간, 코루틴 제어 플래그
     IEnumerator spawn_coroutine;
-    float spawn_time = 10.0f;
+    float spawn_time = 40.0f;
     bool coroutine_flag = true;
 
     //게임 실행 후 최초 대기 시간
