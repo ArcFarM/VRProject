@@ -5,11 +5,13 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Grab : MonoBehaviour
 {
+    GameManager gm;
     public XRGrabInteractable grabInteractable;
     public GameObject otherBurger;                  //다른 버거
     public bool isStart = false;                    //true면 Start버거 false면 Exit버거
     void Start()
     {
+        gm = GameManager.pub_ins;
         //게임을 정지시켜 버리면 Grab도 못해서 아주 느리게 시간이 흐르도록 설정
         if (isStart == true)
         {
@@ -66,5 +68,7 @@ public class Grab : MonoBehaviour
         Debug.Log("Game Started!");
         //게임 시작
         Time.timeScale = 1f;
+        //gameover_flag 초기화
+        gm.gameover_flag = false;
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Life_Indicator : MonoBehaviour
@@ -8,6 +9,7 @@ public class Life_Indicator : MonoBehaviour
     int life_num;
     int lifeCount;
     public GameObject[] light;
+    public TextMeshPro gameOver;
 
     void Start(){
         gm = GameManager.pub_ins;
@@ -19,6 +21,11 @@ public class Life_Indicator : MonoBehaviour
     void Update(){
         lifeCount = gm.life_now;
         if(lifeCount == 0) gm.GameOver();
+        //gameover flag가 true일 때 게임오버 텍스트 활성화
+        if(gm.gameover_flag == true)
+        {
+            gameOver.gameObject.SetActive(true);
+        }
     }
 
     private void Life_Init(){
