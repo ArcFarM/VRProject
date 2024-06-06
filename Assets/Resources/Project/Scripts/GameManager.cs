@@ -75,4 +75,13 @@ public class GameManager : MonoBehaviour
         //게임오버 텍스트는 플래그가 트루일때만 눈에 보여야 한다
         SceneManager.LoadScene("Diner");
     }
+
+    public void Game_Reset(){
+        //게임을 재시작할 때 사용
+        //라이프 초기화
+        life_now = life_init;
+        //게임오버 플래그 초기화
+        gameover_flag = false;
+        //TODO : 씬을 다시 로드하고, 게임오버 텍스트를 숨긴다
+    }
 }

@@ -45,8 +45,8 @@ public class Grab : MonoBehaviour
         {
             ExitGame();
         }
-        gameObject.SetActive(false);
         otherBurger.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     void ExitGame()

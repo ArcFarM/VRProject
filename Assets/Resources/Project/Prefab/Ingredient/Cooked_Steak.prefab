@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 5028567213453976527}
   - component: {fileID: 8243509993233886314}
   - component: {fileID: 6161526686703048864}
-  - component: {fileID: 8624367754405941256}
   - component: {fileID: -7327452229668751587}
   - component: {fileID: 4520894240790252209}
   - component: {fileID: 392031635788133145}
   - component: {fileID: 5099294499922981384}
+  - component: {fileID: 2590252010317248432}
   m_Layer: 0
   m_Name: Cooked_Steak
   m_TagString: Ingredient
@@ -88,28 +88,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8624367754405941256
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5657329893338904949}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7158259833552617698, guid: 7194e719b3284b6f8183f5aecb2355d6, type: 3}
 --- !u!54 &-7327452229668751587
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -314,3 +292,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ing: 24
+--- !u!65 &2590252010317248432
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5657329893338904949}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3799564, y: 0.0358919, z: 0.52693456}
+  m_Center: {x: 0.03778748, y: 0.01794594, z: -0.025084807}

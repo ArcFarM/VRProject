@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 8828185195546333803}
   - component: {fileID: 6039035327006031893}
   - component: {fileID: 7383956637236983390}
-  - component: {fileID: 3150966089524588028}
   - component: {fileID: 2641632191811808222}
   - component: {fileID: -1832060321653455872}
   - component: {fileID: -810670401712723062}
   - component: {fileID: 3622013575922240662}
+  - component: {fileID: 3154542414206335052}
   m_Layer: 0
   m_Name: Fish_Fillet
   m_TagString: Ingredient
@@ -88,28 +88,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3150966089524588028
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5150283708219326457}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4535639289176715514, guid: 2cdd9cbf762f4a6db53d379f087c09cb, type: 3}
 --- !u!54 &2641632191811808222
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -314,3 +292,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ing: 17
+--- !u!65 &3154542414206335052
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5150283708219326457}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.25659013, y: 0.013787024, z: 0.36518028}
+  m_Center: {x: 0, y: 0.0068935035, z: -0.0028542054}

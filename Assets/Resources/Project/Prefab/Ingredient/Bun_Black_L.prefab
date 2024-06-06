@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 744890452830255037}
   - component: {fileID: 4465805559392237592}
   - component: {fileID: 1881745118895606994}
-  - component: {fileID: 453723405481079266}
   - component: {fileID: -3044286253228164070}
   - component: {fileID: 8119436424771654043}
   - component: {fileID: 5979085767073050643}
   - component: {fileID: -2038273093115324307}
   - component: {fileID: 1195112952452413384}
+  - component: {fileID: 497517584337044755}
   m_Layer: 0
   m_Name: Bun_Black_L
   m_TagString: Ingredient
@@ -89,28 +89,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &453723405481079266
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80415287118572807}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5794826976804298142, guid: b439dbe6caee4d4cb9c34e5f38bfedfd, type: 3}
 --- !u!54 &-3044286253228164070
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -330,3 +308,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ing: 3
+--- !u!65 &497517584337044755
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80415287118572807}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.746065, y: 0.101597, z: 0.746065}
+  m_Center: {x: 0.00000008940696, y: 0.050798487, z: -1.8047249e-16}

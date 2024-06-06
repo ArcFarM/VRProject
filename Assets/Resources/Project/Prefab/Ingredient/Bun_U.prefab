@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 3150051377158500093}
   - component: {fileID: 2024614997045027160}
   - component: {fileID: 4322355946029110674}
-  - component: {fileID: 6499876246563298076}
   - component: {fileID: 8032309552281799320}
   - component: {fileID: -3647931352280003344}
   - component: {fileID: -6197545991200345935}
   - component: {fileID: 689560658999717034}
   - component: {fileID: -6185788786559799514}
+  - component: {fileID: 5298552580775695739}
   m_Layer: 0
   m_Name: Bun_U
   m_TagString: Ingredient
@@ -89,28 +89,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6499876246563298076
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2377033798143669319}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -9019059683673347642, guid: fb7cdf7f007d4a3a8c9da8d4a1b5744e, type: 3}
 --- !u!54 &8032309552281799320
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -330,3 +308,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ing: 5
+--- !u!65 &5298552580775695739
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2377033798143669319}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.74982303, y: 0.2624524, z: 0.74982303}
+  m_Center: {x: 0.00000001490116, y: 0.13122617, z: -0.000000014901161}

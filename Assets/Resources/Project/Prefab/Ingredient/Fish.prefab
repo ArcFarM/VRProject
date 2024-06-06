@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 8915473163885562684}
   - component: {fileID: 3318126801979444281}
   - component: {fileID: 3196866977293043599}
-  - component: {fileID: 3688416643651330301}
   - component: {fileID: 1774729192002167786}
   - component: {fileID: 4188807463057892277}
   - component: {fileID: -7786662315996315136}
   - component: {fileID: -134640818212530126}
+  - component: {fileID: 378256685590712350}
   m_Layer: 0
   m_Name: Fish
   m_TagString: Ingredient
@@ -88,29 +88,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3688416643651330301
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3995836765966552705}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.061144654
-  m_Height: 0.6595233
-  m_Direction: 2
-  m_Center: {x: -0.022843678, y: 0.04246103, z: 0.053844027}
 --- !u!54 &1774729192002167786
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -315,3 +292,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ing: 16
+--- !u!65 &378256685590712350
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3995836765966552705}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.20201029, y: 0.12023356, z: 0.69239134}
+  m_Center: {x: -0.002465572, y: 0.04345045, z: 0.0756037}
