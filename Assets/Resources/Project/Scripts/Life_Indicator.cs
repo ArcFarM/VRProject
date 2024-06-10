@@ -37,7 +37,8 @@ public class Life_Indicator : MonoBehaviour
     public void Set_Life(bool flag){
         //주문이 실패하면 라이프를 차감
         if(!flag){
-            light[lifeCount - 1].SetActive(false);
+            Debug.Log("lifeCount: " + lifeCount);
+            light[lifeCount].SetActive(false);
             gm.life_now--;
         }
     }
