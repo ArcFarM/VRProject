@@ -62,7 +62,6 @@ public class GameManager : MonoBehaviour
 
     public void Guest_Do_Life_Minus(){
         //빈 자리가 없어서 손님이 즉시 퇴장할 때 라이프를 차감하는 용도
-        life_now--;
         life.GetComponent<Life_Indicator>().Set_Life(false);
     }
 

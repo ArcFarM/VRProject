@@ -11,7 +11,7 @@ public class Stack_Switch : MonoBehaviour
          && other.transform.childCount <= other.gameObject.GetComponent<Ing_Code>().init_child)
         {
             Object_Hierarchy oh = other.gameObject.GetComponent<Object_Hierarchy>();
-            if(oh.enabled = false){
+            if(oh.enabled == false){
                 oh.enabled = true;
                 oh.flag_switch(1);
             } else {

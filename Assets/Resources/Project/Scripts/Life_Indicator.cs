@@ -38,7 +38,7 @@ public class Life_Indicator : MonoBehaviour
         //주문이 실패하면 라이프를 차감
         if(!flag){
             light[lifeCount - 1].SetActive(false);
-            lifeCount--;
+            gm.life_now--;
         }
     }
 }
