@@ -35,7 +35,8 @@ public class Show_Menu : MonoBehaviour {
     //메뉴를 화면에 표시하는 메서드
     public void Display_Menu(GameObject guest){
         Debug.Log("Menu Display On");
-        //손님의 메뉴 리스트를 가져옴
+        //기존 메뉴 리스트를 초기화 하고 손님의 메뉴 리스트를 가져옴
+        menu_list.Clear();
         menu_list = guest.GetComponent<Make_Order>().order;
 
         //메뉴 리스트를 순회하며 메뉴를 화면에 표시
@@ -57,10 +58,9 @@ public class Show_Menu : MonoBehaviour {
     }
 
     public void Discard_Menu(){
-        //메뉴판 지우기 및 리스트 초기화
+        //메뉴판 지우기
         for(int i = 0; i < menu_list.Count; i++){
             Destroy(menu_arr[i].transform.GetChild(0).gameObject);
         }
-        menu_list.Clear();
     }
 }
