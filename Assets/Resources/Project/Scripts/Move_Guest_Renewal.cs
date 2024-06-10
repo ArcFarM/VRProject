@@ -56,6 +56,7 @@ public class Move_Guest_Renewal : MonoBehaviour
         waypoints = gm.waypoints_out;
         //퇴장 경유지로 이동
         index = 0;
+        Debug.Log("Go_Out_Customer index : " + index);
         StartCoroutine(Move_Customer(waypoints[index]));
         //주문을 실패했거나 바로 나가는 경우 목숨 차감 실행
         if(guest_color.color == Color.red) gm.Guest_Do_Life_Minus();
@@ -79,6 +80,7 @@ public class Move_Guest_Renewal : MonoBehaviour
 
     IEnumerator Move_Customer(GameObject waypoint)
     {
+        Debug.Log("Customer index : " + index);
         Vector3 wp_position = waypoint.transform.position;
         Vector3 next_waypoint = new Vector3(wp_position.x, transform.position.y, wp_position.z);
 
