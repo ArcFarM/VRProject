@@ -30,17 +30,35 @@ public class Object_Hierarchy : MonoBehaviour {
         if(setCoord_flag == null){
             setCoord_flag = StartCoroutine(Set_Coord());
         }
+        if(flag) {
+            grab_inter_flag.enabled = true;
+        } else {
+            //부모가 있고, 플래그가 꺼져있으면 잡기 비활성화
+            if(transform.parent != null)
+                grab_inter_flag.enabled = false;
+        }
     }
 
 IEnumerator Set_Coord(){
     Debug.Log(this.gameObject.name+"의 좌표 재설정 시작");
     yield return new WaitForSeconds(0.1f);
+    //부모가 있는 오브젝트의 좌표를 부모와 맞추기
     if(this.transform.parent != null && this.transform.parent.tag == "Ingredient"){
         Vector3 p_position = transform.parent.position;
         Vector3 c_position = transform.position;
         c_position.x = p_position.x;
         c_position.y = p_position.y + gameObject.GetComponent<Collider>().bounds.size.y + 0.01f;
         c_position.z = p_position.z;
+        transform.position = c_position;
+        this.transform.rotation = transform.parent.rotation;
+    }
+    //부모가 자식 위에 올라갔을 경우 좌표를 다시 내리기
+    if(this.transform.childCount > this.gameObject.GetComponent<Ing_Code>().init_child){
+        Vector3 p_position = transform.position;
+        Vector3 c_position = transform.GetChild(0).transform.position;
+        p_position.x = c_position.x;
+        p_position.y = c_position.y - gameObject.GetComponent<Collider>().bounds.size.y - 0.01f;
+        p_position.z = c_position.z;
         transform.position = c_position;
         this.transform.rotation = transform.parent.rotation;
     }

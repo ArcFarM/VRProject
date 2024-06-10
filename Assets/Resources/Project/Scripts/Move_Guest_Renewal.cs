@@ -19,6 +19,7 @@ public class Move_Guest_Renewal : MonoBehaviour
 
     //주문 결과에 따른 손님 색상 변경을 위한 마테리얼
     public Material this_material;
+    Material guest_color;
     //마테리얼을 적용받을 손님 데이터
     public GameObject guest;
     //index
@@ -26,6 +27,9 @@ public class Move_Guest_Renewal : MonoBehaviour
 
     void Start()
     {
+        //단일 객체 색상 변경을 위한 마테리얼 복사 적용
+        guest_color = new Material(this_material);
+        guest.GetComponent<Renderer>().material = guest_color;
         gm = GameManager.pub_ins;
         waypoints = new List<GameObject>(gm.waypoints);
         counters = gm.counters;
@@ -34,6 +38,7 @@ public class Move_Guest_Renewal : MonoBehaviour
         //빈 자리가 아예 없다면 손님이 즉시 퇴장하며, 라이프 차감
         if(last_target == guest_out){
             waypoints.Add(guest_out);
+            guest_color.color = Color.red;
             StartCoroutine(Go_Outside_Coroutine());
         }
         //경유지에 last target 넣기
@@ -52,8 +57,8 @@ public class Move_Guest_Renewal : MonoBehaviour
         //퇴장 경유지로 이동
         index = 0;
         StartCoroutine(Move_Customer(waypoints[index]));
-        //목숨 차감 실행
-        gm.Guest_Do_Life_Minus();
+        //주문을 실패했거나 바로 나가는 경우 목숨 차감 실행
+        if(guest_color.color == Color.red) gm.Guest_Do_Life_Minus();
         yield return null;
         
         /* 기존 사용 코드
@@ -143,9 +148,6 @@ public class Move_Guest_Renewal : MonoBehaviour
 
     //주문 성공/실패에 따라 손님의 색을 다르게 표현
     public void Red_or_Green(bool order_result){
-        //마테리얼을 받아와서 교체하기
-        Material guest_color = new Material(this_material);
-        guest.GetComponent<Renderer>().material = guest_color;
         //주문 결과에 따라 손님 색상 변경
         if(order_result){
             guest_color.color = Color.green;
