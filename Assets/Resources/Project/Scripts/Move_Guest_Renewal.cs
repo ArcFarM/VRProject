@@ -8,8 +8,8 @@ using UnityEngine;
 public class Move_Guest_Renewal : MonoBehaviour
 {
     GameManager gm;
-    List<GameObject> waypoints;
-    List<GameObject> counters;
+    public List<GameObject> waypoints;
+    public List<GameObject> counters;
     public float MoveSpeed = 3.0f;
     public float RotationSpeed = 45.0f;
     public float RotationAngle = -90.0f;
