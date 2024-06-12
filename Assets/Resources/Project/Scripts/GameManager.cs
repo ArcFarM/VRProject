@@ -31,8 +31,8 @@ public class GameManager : MonoBehaviour
     public List<GameObject> waypoints_out;
 
     //게임의 초기 목숨과 현재 목숨, 목숨 제어용 오브젝트
-    public int life_init = 3;
-    public int life_now = 3;
+    public int life_init = 2;
+    public int life_now = 2;
     public GameObject life;
 
     //메뉴 표시에 사용할 재료 리스트

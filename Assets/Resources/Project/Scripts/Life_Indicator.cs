@@ -7,7 +7,7 @@ public class Life_Indicator : MonoBehaviour
 {
     GameManager gm;
     int life_num;
-    int lifeCount;
+    public int lifeCount;
     public GameObject[] light;
     public TextMeshPro gameOver;
 
@@ -20,7 +20,7 @@ public class Life_Indicator : MonoBehaviour
 
     void Update(){
         lifeCount = gm.life_now;
-        if(lifeCount == 0) gm.GameOver();
+        if(lifeCount < 0) gm.GameOver();
         //gameover flag가 true일 때 게임오버 텍스트 활성화
         if(gm.gameover_flag == true)
         {
@@ -29,7 +29,7 @@ public class Life_Indicator : MonoBehaviour
     }
 
     private void Life_Init(){
-        for(int i = 0; i < life_num; i++){
+        for(int i = 0; i <= life_num; i++){
             light[i].SetActive(true);
         }
     }

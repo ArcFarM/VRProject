@@ -17322,8 +17322,8 @@ MonoBehaviour:
   waypoints_out:
   - {fileID: 3559332713819396644}
   - {fileID: 3559332714353992810}
-  life_init: 3
-  life_now: 3
+  life_init: 2
+  life_now: 2
   life: {fileID: 5044739624337836954}
   ing_list: []
   gameover_flag: 0
