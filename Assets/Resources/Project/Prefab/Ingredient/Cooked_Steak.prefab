@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6161526686703048864}
   - component: {fileID: -7327452229668751587}
   - component: {fileID: 4520894240790252209}
-  - component: {fileID: 392031635788133145}
   - component: {fileID: 5099294499922981384}
   - component: {fileID: 2590252010317248432}
+  - component: {fileID: -7901639110906380141}
   m_Layer: 0
   m_Name: Cooked_Steak
   m_TagString: Ingredient
@@ -267,18 +267,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &392031635788133145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5657329893338904949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85eb2b5cd5fd8eb4db5b305cf3a1ef6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5099294499922981384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ing: 24
+  init_child: 0
 --- !u!65 &2590252010317248432
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -313,3 +302,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.3799564, y: 0.0358919, z: 0.52693456}
   m_Center: {x: 0.03778748, y: 0.01794594, z: -0.025084807}
+--- !u!114 &-7901639110906380141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5657329893338904949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132fdb3d2d1ba934993e8abddd09f6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStacked: 0

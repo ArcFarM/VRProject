@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 7632858662633834157}
   - component: {fileID: -8747134801563638600}
   - component: {fileID: -4717263211860223624}
-  - component: {fileID: -6266410988236425978}
   - component: {fileID: -4734173793102728506}
   - component: {fileID: -2973531248605546872}
   - component: {fileID: 2578085378818652722}
+  - component: {fileID: -9179167653051447879}
   m_Layer: 0
   m_Name: Steak
   m_TagString: Ingredient
@@ -268,18 +268,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &-6266410988236425978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8281452256979724152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85eb2b5cd5fd8eb4db5b305cf3a1ef6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-4734173793102728506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,6 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ing: 23
+  init_child: 0
 --- !u!65 &2578085378818652722
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -329,3 +318,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.54778105, y: 0.04635656, z: 0.66048497}
   m_Center: {x: -0.0052977796, y: 0.023178264, z: -0.035205673}
+--- !u!114 &-9179167653051447879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8281452256979724152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132fdb3d2d1ba934993e8abddd09f6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStacked: 0

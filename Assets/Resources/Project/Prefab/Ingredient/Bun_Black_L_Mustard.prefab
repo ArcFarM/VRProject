@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2106614476681855200}
   - component: {fileID: -756547537261527849}
   - component: {fileID: 9143541964003804773}
-  - component: {fileID: 7673838905370693463}
   - component: {fileID: 773069679928798360}
   - component: {fileID: 3048305151767395416}
+  - component: {fileID: 6157607709978423295}
   m_Layer: 0
   m_Name: Bun_Black_L_Mustard
   m_TagString: Ingredient
@@ -267,18 +267,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &7673838905370693463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449461407260270901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85eb2b5cd5fd8eb4db5b305cf3a1ef6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &773069679928798360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ing: 4
+  init_child: 0
 --- !u!65 &3048305151767395416
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -311,5 +300,19 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.746065, y: 0.10159701, z: 0.746065}
-  m_Center: {x: 0.00000008940696, y: 0.05079849, z: -1.804725e-16}
+  m_Size: {x: 0.75, y: 0.1, z: 0.75}
+  m_Center: {x: 0, y: 0.05, z: 0}
+--- !u!114 &6157607709978423295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449461407260270901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132fdb3d2d1ba934993e8abddd09f6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStacked: 0
+  flag: 0

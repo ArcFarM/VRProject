@@ -7,27 +7,17 @@ public class Stack_Switch : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Ingredient"
-         && other.transform.childCount <= other.gameObject.GetComponent<Ing_Code>().init_child)
-        {
-            Object_Hierarchy oh = other.gameObject.GetComponent<Object_Hierarchy>();
-            if(oh.enabled == false){
-                oh.enabled = true;
-                oh.flag_switch(1);
-            } else {
-                oh.enabled = false;
-                oh.flag_switch(0);
-            }
+        if (other.gameObject.tag == "Ingredient" && other.GetComponent<Stacker>() != null){
+            Stacker stk = other.GetComponent<Stacker>();
+            //찬장 내에서 재료가 쌓이는 것을 방지
+            stk.flag = true;
         }
     }
 
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Ingredient" && 
-        other.transform.childCount <= other.gameObject.GetComponent<Ing_Code>().init_child)
-        {
-            other.gameObject.GetComponent<Object_Hierarchy>().enabled = true;
-            other.gameObject.GetComponent<Object_Hierarchy>().flag_switch(1);
+        if(other.tag == "Ingredient" && other.GetComponent<Stacker>() != null){
+            other.GetComponent<Stacker>().flag = true;
         }
     }
 }

@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2249661838617526156}
   - component: {fileID: -6816630657574383241}
   - component: {fileID: 1581273492454960210}
-  - component: {fileID: -886525926369279957}
   - component: {fileID: 308460196839606322}
   - component: {fileID: 1685471633756492990}
+  - component: {fileID: -8775835754710146205}
   m_Layer: 0
   m_Name: Cheese_Sliced
   m_TagString: Ingredient
@@ -267,18 +267,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &-886525926369279957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4745518449036543763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85eb2b5cd5fd8eb4db5b305cf3a1ef6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &308460196839606322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ing: 14
+  init_child: 0
 --- !u!65 &1685471633756492990
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -313,3 +302,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.3706368, y: 0.012672547, z: 0.3706368}
   m_Center: {x: 0.00000017881392, y: -0.000000001862645, z: 0.00000001490116}
+--- !u!114 &-8775835754710146205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4745518449036543763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132fdb3d2d1ba934993e8abddd09f6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStacked: 0

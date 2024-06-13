@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 1881745118895606994}
   - component: {fileID: -3044286253228164070}
   - component: {fileID: 8119436424771654043}
-  - component: {fileID: 5979085767073050643}
   - component: {fileID: -2038273093115324307}
   - component: {fileID: 1195112952452413384}
   - component: {fileID: 497517584337044755}
+  - component: {fileID: -3943221396319618689}
   m_Layer: 0
   m_Name: Bun_Black_L
   m_TagString: Ingredient
@@ -268,18 +268,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &5979085767073050643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80415287118572807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85eb2b5cd5fd8eb4db5b305cf3a1ef6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-2038273093115324307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,6 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ing: 3
+  init_child: 0
 --- !u!65 &497517584337044755
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -327,5 +316,19 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.746065, y: 0.101597, z: 0.746065}
-  m_Center: {x: 0.00000008940696, y: 0.050798487, z: -1.8047249e-16}
+  m_Size: {x: 0.75, y: 0.1, z: 0.75}
+  m_Center: {x: 0, y: 0.05, z: 0}
+--- !u!114 &-3943221396319618689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80415287118572807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132fdb3d2d1ba934993e8abddd09f6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStacked: 0
+  flag: 0

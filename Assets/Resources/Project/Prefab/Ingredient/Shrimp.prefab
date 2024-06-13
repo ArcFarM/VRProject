@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: -8277649054712154394}
   - component: {fileID: 8116941630340135233}
   - component: {fileID: 58906272838914189}
-  - component: {fileID: 6396936275636094188}
   - component: {fileID: 3724061219723437231}
   - component: {fileID: -4766766537098868826}
+  - component: {fileID: -5986500056485037233}
   m_Layer: 0
   m_Name: Shrimp
   m_TagString: Ingredient
@@ -243,18 +243,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.18333626, y: 0.06914139, z: 0.18564987}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6396936275636094188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9179419569965894427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85eb2b5cd5fd8eb4db5b305cf3a1ef6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &3724061219723437231
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -311,6 +299,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ing: 22
   init_child: 6
+--- !u!114 &-5986500056485037233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9179419569965894427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132fdb3d2d1ba934993e8abddd09f6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStacked: 0
 --- !u!1001 &1243292960640727013
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3196866977293043599}
   - component: {fileID: 1774729192002167786}
   - component: {fileID: 4188807463057892277}
-  - component: {fileID: -7786662315996315136}
   - component: {fileID: -134640818212530126}
   - component: {fileID: 378256685590712350}
+  - component: {fileID: 3399085854957777286}
   m_Layer: 0
   m_Name: Fish
   m_TagString: Ingredient
@@ -267,18 +267,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &-7786662315996315136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3995836765966552705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85eb2b5cd5fd8eb4db5b305cf3a1ef6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-134640818212530126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ing: 16
+  init_child: 0
 --- !u!65 &378256685590712350
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -313,3 +302,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.20201029, y: 0.12023356, z: 0.69239134}
   m_Center: {x: -0.002465572, y: 0.04345045, z: 0.0756037}
+--- !u!114 &3399085854957777286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3995836765966552705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132fdb3d2d1ba934993e8abddd09f6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStacked: 0

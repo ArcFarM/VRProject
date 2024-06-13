@@ -64,11 +64,13 @@ public class Serve_Menu : MonoBehaviour
             Debug.Log("Order Complete");
             guest.GetComponent<Move_Guest_Renewal>().Red_or_Green(result);
             guest.GetComponent<Move_Guest_Renewal>().Go_Outside();
+            Destroy(food);
         } else {
             //목숨 차감
             Debug.Log("Order Failed");
             guest.GetComponent<Move_Guest_Renewal>().Red_or_Green(result);
             guest.GetComponent<Move_Guest_Renewal>().Go_Outside();
+            Destroy(food);
         }
     }  
 }

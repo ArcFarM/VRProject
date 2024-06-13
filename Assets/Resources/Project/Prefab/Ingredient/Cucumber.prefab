@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1665185728997632666}
   - component: {fileID: 1597619924921213858}
   - component: {fileID: 4272521802160254041}
-  - component: {fileID: -4993732956062101921}
   - component: {fileID: -261543679691606979}
   - component: {fileID: 7528026532249171567}
+  - component: {fileID: 7218926078479554260}
   m_Layer: 0
   m_Name: Cucumber
   m_TagString: Ingredient
@@ -243,19 +243,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &-4993732956062101921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3732615812424631549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85eb2b5cd5fd8eb4db5b305cf3a1ef6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flag: 0
 --- !u!23 &-261543679691606979
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -312,6 +299,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ing: 15
   init_child: 6
+--- !u!114 &7218926078479554260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3732615812424631549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132fdb3d2d1ba934993e8abddd09f6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStacked: 0
 --- !u!1001 &988390692683937666
 PrefabInstance:
   m_ObjectHideFlags: 0

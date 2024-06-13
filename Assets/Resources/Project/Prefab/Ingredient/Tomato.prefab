@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3259441815833701714}
   - component: {fileID: 2159928433800664903}
   - component: {fileID: -1399795772617703981}
-  - component: {fileID: 5526367331474213389}
   - component: {fileID: -2221354486615820483}
   - component: {fileID: 5179340480236307440}
+  - component: {fileID: -8150316546497948997}
   m_Layer: 0
   m_Name: Tomato
   m_TagString: Ingredient
@@ -267,18 +267,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &5526367331474213389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3907753934650723463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85eb2b5cd5fd8eb4db5b305cf3a1ef6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-2221354486615820483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ing: 25
+  init_child: 0
 --- !u!65 &5179340480236307440
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -313,3 +302,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.39243656, y: 0.026984526, z: 0.39243656}
   m_Center: {x: 0, y: 0.013492254, z: 0}
+--- !u!114 &-8150316546497948997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3907753934650723463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132fdb3d2d1ba934993e8abddd09f6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStacked: 0

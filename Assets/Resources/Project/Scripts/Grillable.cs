@@ -16,7 +16,6 @@ public class Grillable : MonoBehaviour
             gameObject.SetActive(false);
             Instantiate(cookedObject, transform.position, transform.rotation);
             collisionTime = 0f;
-            cookedObject.GetComponent<Object_Hierarchy>().enabled = true;
             Destroy(gameObject);
         }
     }

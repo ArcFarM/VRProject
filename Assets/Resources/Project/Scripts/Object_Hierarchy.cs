@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class Object_Hierarchy : MonoBehaviour
@@ -49,12 +50,10 @@ public class Object_Hierarchy : MonoBehaviour
 
         if (this.transform.parent != null && this.transform.parent.tag == "Ingredient")
         {
-            Vector3 p_position = transform.parent.position;
-            Vector3 c_position = transform.position;
-            c_position.x = p_position.x;
-            c_position.y = p_position.y + transform.parent.GetComponent<Collider>().bounds.size.y + 0.01f;
-            c_position.z = p_position.z;
-            transform.position = c_position;
+            float height = transform.parent.GetComponent<BoxCollider>().size.y;
+            height += transform.parent.GetComponent<BoxCollider>().center.y * 2;
+            height += GetComponent<BoxCollider>().center.y * 2;
+            transform.localPosition = new Vector3(0, height + 0.03f, 0);
             this.transform.rotation = transform.parent.rotation;
         }
 
@@ -63,12 +62,10 @@ public class Object_Hierarchy : MonoBehaviour
             Transform child = transform.GetChild(i);
             if (child.CompareTag("Ingredient"))
             {
-                Vector3 p_position = transform.position;
-                Vector3 c_position = child.position;
-                c_position.x = p_position.x;
-                c_position.y = p_position.y - GetComponent<Collider>().bounds.size.y - 0.01f;
-                c_position.z = p_position.z;
-                child.position = c_position;
+                float height = transform.parent.GetComponent<BoxCollider>().size.y;
+                height += transform.parent.GetComponent<BoxCollider>().center.y * 2;
+                height += GetComponent<BoxCollider>().center.y * 2;
+                transform.localPosition = new Vector3(0, height + 0.03f, 0);
                 child.rotation = transform.rotation;
             }
         }
