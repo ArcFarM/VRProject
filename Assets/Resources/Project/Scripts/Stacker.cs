@@ -26,7 +26,7 @@ public class Stacker : MonoBehaviour
                     //자식 오브젝트의 그랩 비활성화
                     collision.transform.GetComponent<XRGrabInteractable>().enabled = false;
                     //물리 동기화
-                    RigidSync(collision.transform, this.transform);
+                    RigidSync(collision.transform, transform);
                 }
             }
         }
@@ -47,6 +47,8 @@ public class Stacker : MonoBehaviour
             childRb.velocity = parentRb.velocity;
             parentRb.angularVelocity = Vector3.zero;
             childRb.angularVelocity = parentRb.angularVelocity;
+
+            Sync_PosandRtt(child.gameObject, parent.gameObject);
         }
     }
 
@@ -56,18 +58,18 @@ public class Stacker : MonoBehaviour
             transform.rotation = Quaternion.identity;
             //내 밑에 재료가 있다면
             if(isStacked){
-                //밑에 있는 재료와 위치, 회전 동기화
+                //밑에 있는 재료와 회전 동기화
                 if(transform.parent != null){
-                    Sync_PosandRtt(transform.parent.gameObject);
+                    transform.localRotation = Quaternion.identity;
                 }
             }
         }
 
     }
 
-    void Sync_PosandRtt(GameObject parent){
+    void Sync_PosandRtt(GameObject child, GameObject parent){
         float p_height = parent.GetComponent<BoxCollider>().bounds.extents.y * 2;
         p_height += parent.GetComponent<BoxCollider>().center.y;
-        transform.localPosition = new Vector3(0, p_height + 0.05f, 0);
+        child.transform.localPosition = new Vector3(0, p_height + 0.01f, 0);
     }
 }
