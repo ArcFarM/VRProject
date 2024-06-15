@@ -33,16 +33,20 @@ public class Serve_Menu : MonoBehaviour
         //코드 단축을 위한 변수 설정
         //우선 제일 위가 되는 부모를 받아와서 비교한다
         GameObject tmp = food;
+        int idx = 0;
         Debug.Log("첫 메뉴 : " + order[0] + ", 현재 음식 : " + tmp.gameObject.GetComponent<Ing_Code>().ing);
         if(tmp.gameObject.GetComponent<Ing_Code>().ing == order[0]){
             for(int i = 1; i < order.Count; i++){
                 for(int j = 0; j < tmp.transform.childCount; j++){
                     if(tmp.transform.GetChild(j).gameObject.tag == "Ingredient"){
-                        tmp = tmp.transform.GetChild(j).gameObject;
-                        Debug.Log("메뉴 : " + order[i] + ", 현재 음식 : " + tmp.gameObject.GetComponent<Ing_Code>().ing);
-                        if(tmp.gameObject.GetComponent<Ing_Code>().ing != order[i]) return false;
+                        idx = j;
+                        j = 1000000;
                     }
                 }
+                
+                tmp = tmp.transform.GetChild(idx).gameObject;
+                Debug.Log("메뉴 : " + order[i] + ", 현재 음식 : " + tmp.gameObject.GetComponent<Ing_Code>().ing);
+                if(tmp.gameObject.GetComponent<Ing_Code>().ing != order[i]) return false;
             }  
         } //아니면 주문이 잘못된 것이므로 거짓을 반환
         else return false;
