@@ -12,12 +12,14 @@ public class Serve_Menu : MonoBehaviour
     public GameObject counter;
 
     public GameObject life;
+    public List<Ing_List> order;
 
     //손님 받아오기 및 손님 초기화
     public void GetGuest(){
         //null Check
         if(counter.GetComponent<OrderWP_flag>().guest == null) return;
         guest = counter.GetComponent<OrderWP_flag>().guest;
+        order = guest.GetComponent<Make_Order>().order;
     }
     
     public void NullGuest(){
@@ -29,23 +31,23 @@ public class Serve_Menu : MonoBehaviour
     //접시에서 음식을 전달받았을 때 메뉴와 비교하고 맞다면 그냥 퇴장, 아니라면 라이프를 감소시키고 퇴장
     public bool Check_Menu(GameObject food){
         //코드 단축을 위한 변수 설정
-        List<Ing_List> order = guest.GetComponent<Make_Order>().order;
         //우선 제일 위가 되는 부모를 받아와서 비교한다
         GameObject tmp = food;
-        int idx = 0;
-        if(tmp.gameObject.GetComponent<Ing_Code>().ing == order[idx]){
-            //그 후 해당 부모가 자식이 있다면 계속 진행한다)
-            while(tmp.gameObject.transform.childCount > 0){
-                tmp = tmp.gameObject.transform.GetChild(0).gameObject;
-                idx++;
-                if(tmp.gameObject.GetComponent<Ing_Code>().ing == order[idx]){
-                    continue;
+        Debug.Log("첫 메뉴 : " + order[0] + ", 현재 음식 : " + tmp.gameObject.GetComponent<Ing_Code>().ing);
+        if(tmp.gameObject.GetComponent<Ing_Code>().ing == order[0]){
+            for(int i = 1; i < order.Count; i++){
+                for(int j = 0; j < tmp.transform.childCount; j++){
+                    if(tmp.transform.GetChild(j).gameObject.tag == "Ingredient"){
+                        tmp = tmp.transform.GetChild(j).gameObject;
+                        Debug.Log("메뉴 : " + order[i] + ", 현재 음식 : " + tmp.gameObject.GetComponent<Ing_Code>().ing);
+                        if(tmp.gameObject.GetComponent<Ing_Code>().ing != order[i]) return false;
+                    }
                 }
-                else return false;
-            }   
-            return true;
+            }  
         } //아니면 주문이 잘못된 것이므로 거짓을 반환
         else return false;
+
+        return true;
     }
 
     //서빙용 접시에 음식이 올라갔다면 메뉴가 맞는 지 확인
