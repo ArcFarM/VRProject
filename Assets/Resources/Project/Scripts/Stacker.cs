@@ -37,10 +37,6 @@ public class Stacker : MonoBehaviour
         //부모와 자식의 물리를 동기화
         Rigidbody parentRb = parent.GetComponent<Rigidbody>();
         Rigidbody childRb = child.GetComponent<Rigidbody>();
-        BoxCollider childCol = child.GetComponent<BoxCollider>();
-        if(childCol != null){
-            childCol.enabled = false;
-        }
         if (parentRb != null && childRb != null){
             // 자식의 Rigidbody를 부모와 동기화
             childRb.isKinematic = true;
