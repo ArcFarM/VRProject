@@ -12,7 +12,7 @@ public class Guest_Loading : MonoBehaviour
 
     //기본 스폰을 위한 코루틴과 스폰 시간, 코루틴 제어 플래그
     IEnumerator spawn_coroutine;
-    float spawn_time = 40.0f;
+    float spawn_time = 20.0f;
     bool coroutine_flag = true;
 
     //게임 실행 후 최초 대기 시간
@@ -61,7 +61,7 @@ public class Guest_Loading : MonoBehaviour
 
     void Get_Guest_Data(GameObject guest_receiver){
         //guest_refer에 저장된 경유지 정보를 동기화
-        guest_receiver.GetComponent<Make_Order>().level = difficulty;
+        guest_receiver.GetComponent<Make_Order>().level = 1;
         guest_receiver.tag = "Guest";
         guest_receiver.GetComponent<Move_Guest_Renewal>().guest_out = guest_out;
     }
