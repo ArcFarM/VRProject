@@ -11,7 +11,6 @@ public class Guest_Loading : MonoBehaviour
     public GameObject guest_prefab;
 
     //기본 스폰을 위한 코루틴과 스폰 시간, 코루틴 제어 플래그
-    IEnumerator spawn_coroutine;
     float spawn_time = 45.0f;
     bool coroutine_flag = true;
 
@@ -25,11 +24,16 @@ public class Guest_Loading : MonoBehaviour
     //손님퇴장 지점
     public GameObject guest_out;
 
+    void Start(){
+        gm = GameManager.pub_ins;
+    }
+
     void Update(){
         //난이도는 최대 8까지
         if(difficulty > max_difficulty){
             //난이도가 최대치에 도달하면 코루틴 종료 및 게임 클리어 실행
-            StopCoroutine(Guest_Spawn());
+            coroutine_flag = false;
+            //게임 클리어 실행
             gm.Game_Clear();
             //return;
         } else {

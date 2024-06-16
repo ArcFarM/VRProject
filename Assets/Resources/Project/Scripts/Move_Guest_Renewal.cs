@@ -80,7 +80,6 @@ public class Move_Guest_Renewal : MonoBehaviour
 
     IEnumerator Move_Customer(GameObject waypoint)
     {
-        Debug.Log("Customer index : " + index);
         Vector3 wp_position = waypoint.transform.position;
         Vector3 next_waypoint = new Vector3(wp_position.x, transform.position.y, wp_position.z);
 

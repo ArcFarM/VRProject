@@ -70,6 +70,6 @@ public class Stacker : MonoBehaviour
     void Sync_PosandRtt(GameObject child, GameObject parent){
         float p_height = parent.GetComponent<BoxCollider>().bounds.extents.y * 2;
         p_height += parent.GetComponent<BoxCollider>().center.y;
-        child.transform.localPosition = new Vector3(0, p_height + 0.01f, 0);
+        child.transform.position = parent.transform.position + new Vector3(0, p_height + 0.01f, 0);
     }
 }
