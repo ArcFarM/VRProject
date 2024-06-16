@@ -17498,8 +17498,9 @@ MonoBehaviour:
   life: {fileID: 5044739624337836954}
   ing_list: []
   gameover_text: {fileID: 781453854}
-  gameclear_text: {fileID: 0}
+  gameclear_text: {fileID: 162007445}
   gameover_flag: 0
+  gameclear_flag: 0
 --- !u!4 &726907510
 Transform:
   m_ObjectHideFlags: 0
